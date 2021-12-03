@@ -566,6 +566,27 @@ merged_r7_data$trust_army[merged_r7_data$Q43H == 3] <- 4 #this implies that "do 
 
 WVS_TimeSeries_1981_2020_spss_v2_0 <- read_sav("WVS_TimeSeries_1981_2020_spss_v2_0.sav")
 
+
+#country
+#cowcode 
+#country_wave
+
+WVS_TimeSeries_1981_2020_spss_v2_0$cowcode <- NA
+WVS_TimeSeries_1981_2020_spss_v2_0$cowcode <- WVS_TimeSeries_1981_2020_spss_v2_0$COW_NUM 
+WVS_TimeSeries_1981_2020_spss_v2_0$country <- NA
+WVS_TimeSeries_1981_2020_spss_v2_0$country <- WVS_TimeSeries_1981_2020_spss_v2_0$COUNTRY_ALPHA
+
+WVS_TimeSeries_1981_2020_spss_v2_0$country_wave <- NA
+
+WVS_TimeSeries_1981_2020_spss_v2_0$WVS <- "WVS"
+WVS_TimeSeries_1981_2020_spss_v2_0$wave2 <- WVS_TimeSeries_1981_2020_spss_v2_0$S002VS
+WVS_TimeSeries_1981_2020_spss_v2_0$wave <- str_c(WVS_TimeSeries_1981_2020_spss_v2_0$WVS, "", WVS_TimeSeries_1981_2020_spss_v2_0$wave2)
+
+#Here we a new variable, wave, that show what survey AND wave the respondent is from. For example 'WV2'
+
+WVS_TimeSeries_1981_2020_spss_v2_0$country_wave <- str_c(WVS_TimeSeries_1981_2020_spss_v2_0$cowcode, "_", WVS_TimeSeries_1981_2020_spss_v2_0$wave)
+
+
 #World Values Survey Dependent Variable (Please note that, according to the variable and equivalences excel file, that item are coded from high confidence to low in the WVS)
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_courts <- NA
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_courts[WVS_TimeSeries_1981_2020_spss_v2_0$E069_17 == 4] <- 1
@@ -598,6 +619,5 @@ WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0$E069_02 == 3] <- 2
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0$E069_02 == 2] <- 3
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0$E069_02 == 1] <- 4
-
 
 
