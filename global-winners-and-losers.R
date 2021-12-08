@@ -620,4 +620,304 @@ WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0$E069_02 == 2] <- 3
 WVS_TimeSeries_1981_2020_spss_v2_0$trust_army[WVS_TimeSeries_1981_2020_spss_v2_0$E069_02 == 1] <- 4
 
+#LATINOBAROMETRO WAVE 2020  
+
+library(foreign)
+Latino_Baro_r2020 <- read.dta("Latinobarometro_2020_Eng_Stata_v1_0.dta")
+
+Latino_Baro_r2020$cowcode <- NA
+Latino_Baro_r2020$cowcode <- countryname(Latino_Baro_r2020$idenpa, destination = 'cowc', warn = TRUE)
+#The command identifies problems with matching: Brasil,  Rep. Dominicana,  México,  Panamá,  Perú. We will add the cow charater manually here. 
+Latino_Baro_r2020$cowcode[Latino_Baro_r2020$idenpa == 'Brasil'] <- 'BRA'
+Latino_Baro_r2020$cowcode[Latino_Baro_r2020$idenpa == 'Rep. Dominicana'] <- 'DOM'
+Latino_Baro_r2020$cowcode[Latino_Baro_r2020$idenpa == 'México'] <- 'MEX'
+Latino_Baro_r2020$cowcode[Latino_Baro_r2020$idenpa == 'Panamá'] <- 'PAN'
+Latino_Baro_r2020$cowcode[Latino_Baro_r2020$idenpa == 'Perú'] <- 'PER'
+
+Latino_Baro_r2020$country_wave <- NA
+Latino_Baro_r2020$wave <- "LATIN20"
+library(stringr)
+Latino_Baro_r2020$country_wave <- str_c(Latino_Baro_r2020$cowcode, "_", Latino_Baro_r2020$wave)
+
+#LATINOBAROMETRO WAVE 2020 Dependent Variable (high to low code order) 
+
+Latino_Baro_r2020$trust_courts <- NA #Judicial Branch
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 4] <- 1
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 3] <- 2
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 2] <- 3
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2020$trust_police <- NA
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 4] <- 1
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 3] <- 2
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 2] <- 3
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2020$trust_president <- NA
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 4] <- 1
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 3] <- 2
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 2] <- 3
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2020$trust_parliament <- NA
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 4] <- 1
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 3] <- 2
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 2] <- 3
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2020$trust_electoral <- NA
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 4] <- 1
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 3] <- 2
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 2] <- 3
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2020$trust_parties  <- NA
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 4] <- 1
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 3] <- 2
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 2] <- 3
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2020$trust_army <- NA
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 4] <- 1
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 3] <- 2
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 2] <- 3
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+#LATINOBAROMETRO WAVE 2018 NO CODEBOOK FOR 2018. I CAN FIGURE THE CODING OUT BY LOOKING AT LABEL. BUT THE LABELS ARE IN SPANISH.
+
+#LATINOBAROMETRO WAVE 2017
+
+Latino_Baro_r2017 <- read_sav("Latinobarometro2017Eng_v20180117.sav")
+
+Latino_Baro_r2017$cowcode <- NA
+Latino_Baro_r2017$idenpa <- NA
+
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 32] <- 'Argentina'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 68] <- 'Bolivia'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 76] <- 'Brazil'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 152] <- 'Chile'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 170] <- 'Colombia'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 188] <- 'Costa Rica'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 214] <- 'Dominican Rep.'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 218] <- 'Ecuador'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 222] <- 'El Salvador'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 320] <- 'Guatemala'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 484] <- 'Mexico'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 558] <- 'Nicaragua'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 591] <- 'Panama'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 600] <- 'Paraguay'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 604] <- 'Peru'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 858] <- 'Uruguay'
+Latino_Baro_r2017$idenpa[Latino_Baro_r2017$IDENPA == 862] <- 'Venezuela'
+
+Latino_Baro_r2017$cowcode <- countryname(Latino_Baro_r2017$idenpa, destination = 'cowc', warn = TRUE)
+
+Latino_Baro_r2017$cowcode[Latino_Baro_r2017$idenpa == 'Dominican Rep.'] <- 'DOM'
+
+
+Latino_Baro_r2017$country_wave <- NA
+Latino_Baro_r2017$wave <- "LATIN17"
+library(stringr)
+Latino_Baro_r2017$country_wave <- str_c(Latino_Baro_r2017$cowcode, "_", Latino_Baro_r2017$wave)
+
+#LATINOBAROMETRO WAVE 2017 Dependent Variable (high to low code order) 
+
+Latino_Baro_r2017$trust_courts <- NA #Judicial Branch
+Latino_Baro_r2017$trust_courts[Latino_Baro_r2017$P14ST.F == 4] <- 1
+Latino_Baro_r2017$trust_courts[Latino_Baro_r2017$P14ST.F == 3] <- 2
+Latino_Baro_r2017$trust_courts[Latino_Baro_r2017$P14ST.F == 2] <- 3
+Latino_Baro_r2017$trust_courts[Latino_Baro_r2017$P14ST.F == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2017$trust_police <- NA
+Latino_Baro_r2017$trust_police[Latino_Baro_r2017$P14STGBS.B == 4] <- 1
+Latino_Baro_r2017$trust_police[Latino_Baro_r2017$P14STGBS.B == 3] <- 2
+Latino_Baro_r2017$trust_police[Latino_Baro_r2017$P14STGBS.B == 2] <- 3
+Latino_Baro_r2017$trust_police[Latino_Baro_r2017$P14STGBS.B == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2017$trust_president <- NA
+Latino_Baro_r2017$trust_president[Latino_Baro_r2017$P14ST.E == 4] <- 1
+Latino_Baro_r2017$trust_president[Latino_Baro_r2017$P14ST.E == 3] <- 2
+Latino_Baro_r2017$trust_president[Latino_Baro_r2017$P14ST.E == 2] <- 3
+Latino_Baro_r2017$trust_president[Latino_Baro_r2017$P14ST.E == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2017$trust_parliament <- NA
+Latino_Baro_r2017$trust_parliament[Latino_Baro_r2017$P14ST.D == 4] <- 1
+Latino_Baro_r2017$trust_parliament[Latino_Baro_r2017$P14ST.D == 3] <- 2
+Latino_Baro_r2017$trust_parliament[Latino_Baro_r2017$P14ST.D == 2] <- 3
+Latino_Baro_r2017$trust_parliament[Latino_Baro_r2017$P14ST.D == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2017$trust_electoral <- NA
+Latino_Baro_r2017$trust_electoral[Latino_Baro_r2017$P14ST.H == 4] <- 1
+Latino_Baro_r2017$trust_electoral[Latino_Baro_r2017$P14ST.H == 3] <- 2
+Latino_Baro_r2017$trust_electoral[Latino_Baro_r2017$P14ST.H == 2] <- 3
+Latino_Baro_r2017$trust_electoral[Latino_Baro_r2017$P14ST.H == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2017$trust_army <- NA
+Latino_Baro_r2017$trust_army[Latino_Baro_r2017$P14STGBS.A == 4] <- 1
+Latino_Baro_r2017$trust_army[Latino_Baro_r2017$P14STGBS.A == 3] <- 2
+Latino_Baro_r2017$trust_army[Latino_Baro_r2017$P14STGBS.A == 2] <- 3
+Latino_Baro_r2017$trust_army[Latino_Baro_r2017$P14STGBS.A == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2017$trust_parties  <- NA
+Latino_Baro_r2017$trust_parties[Latino_Baro_r2017$P14ST.G == 4] <- 1
+Latino_Baro_r2017$trust_parties[Latino_Baro_r2017$P14ST.G == 3] <- 2
+Latino_Baro_r2017$trust_parties[Latino_Baro_r2017$P14ST.G == 2] <- 3
+Latino_Baro_r2017$trust_parties[Latino_Baro_r2017$P14ST.G == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+#LATINOBAROMETRO WAVE 2016
+
+Latino_Baro_r2016 <- read_sav("Latinobarometro2016Eng_v20170205.sav")
+
+Latino_Baro_r2016$cowcode <- NA
+Latino_Baro_r2016$idenpa <- NA
+
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 32] <- 'Argentina'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 68] <- 'Bolivia'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 76] <- 'Brazil'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 152] <- 'Chile'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 170] <- 'Colombia'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 188] <- 'Costa Rica'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 214] <- 'Dominican Rep.'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 218] <- 'Ecuador'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 222] <- 'El Salvador'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 320] <- 'Guatemala'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 484] <- 'Mexico'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 558] <- 'Nicaragua'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 591] <- 'Panama'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 600] <- 'Paraguay'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 604] <- 'Peru'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 858] <- 'Uruguay'
+Latino_Baro_r2016$idenpa[Latino_Baro_r2016$IDENPA == 862] <- 'Venezuela'
+
+Latino_Baro_r2016$cowcode <- countryname(Latino_Baro_r2016$idenpa, destination = 'cowc', warn = TRUE)
+
+Latino_Baro_r2016$cowcode[Latino_Baro_r2016$idenpa == 'Dominican Rep.'] <- 'DOM'
+
+
+Latino_Baro_r2016$country_wave <- NA
+Latino_Baro_r2016$wave <- "LATIN16"
+library(stringr)
+Latino_Baro_r2016$country_wave <- str_c(Latino_Baro_r2016$cowcode, "_", Latino_Baro_r2016$wave)
+
+#LATINOBAROMETRO WAVE 2016 Dependent Variable (high to low code order) 
+
+Latino_Baro_r2016$trust_courts <- NA #Judicial Branch
+Latino_Baro_r2016$trust_courts[Latino_Baro_r2016$P13STF == 4] <- 1
+Latino_Baro_r2016$trust_courts[Latino_Baro_r2016$P13STF == 3] <- 2
+Latino_Baro_r2016$trust_courts[Latino_Baro_r2016$P13STF == 2] <- 3
+Latino_Baro_r2016$trust_courts[Latino_Baro_r2016$P13STF == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2016$trust_police <- NA
+Latino_Baro_r2016$trust_police[Latino_Baro_r2016$P13STGBSB == 4] <- 1
+Latino_Baro_r2016$trust_police[Latino_Baro_r2016$P13STGBSB == 3] <- 2
+Latino_Baro_r2016$trust_police[Latino_Baro_r2016$P13STGBSB == 2] <- 3
+Latino_Baro_r2016$trust_police[Latino_Baro_r2016$P13STGBSB == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2016$trust_president <- NA
+Latino_Baro_r2016$trust_president[Latino_Baro_r2016$P13STE == 4] <- 1
+Latino_Baro_r2016$trust_president[Latino_Baro_r2016$P13STE == 3] <- 2
+Latino_Baro_r2016$trust_president[Latino_Baro_r2016$P13STE == 2] <- 3
+Latino_Baro_r2016$trust_president[Latino_Baro_r2016$P13STE == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2016$trust_parliament <- NA
+Latino_Baro_r2016$trust_parliament[Latino_Baro_r2016$P13STD == 4] <- 1
+Latino_Baro_r2016$trust_parliament[Latino_Baro_r2016$P13STD == 3] <- 2
+Latino_Baro_r2016$trust_parliament[Latino_Baro_r2016$P13STD == 2] <- 3
+Latino_Baro_r2016$trust_parliament[Latino_Baro_r2016$P13STD == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2016$trust_electoral <- NA
+Latino_Baro_r2016$trust_electoral[Latino_Baro_r2016$P13STH == 4] <- 1
+Latino_Baro_r2016$trust_electoral[Latino_Baro_r2016$P13STH == 3] <- 2
+Latino_Baro_r2016$trust_electoral[Latino_Baro_r2016$P13STH == 2] <- 3
+Latino_Baro_r2016$trust_electoral[Latino_Baro_r2016$P13STH == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2016$trust_army <- NA
+Latino_Baro_r2016$trust_army[Latino_Baro_r2016$P13STGBSA == 4] <- 1
+Latino_Baro_r2016$trust_army[Latino_Baro_r2016$P13STGBSA == 3] <- 2
+Latino_Baro_r2016$trust_army[Latino_Baro_r2016$P13STGBSA == 2] <- 3
+Latino_Baro_r2016$trust_army[Latino_Baro_r2016$P13STGBSA == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2016$trust_parties  <- NA
+Latino_Baro_r2016$trust_parties[Latino_Baro_r2016$P13STG == 4] <- 1
+Latino_Baro_r2016$trust_parties[Latino_Baro_r2016$P13STG == 3] <- 2
+Latino_Baro_r2016$trust_parties[Latino_Baro_r2016$P13STG == 2] <- 3
+Latino_Baro_r2016$trust_parties[Latino_Baro_r2016$P13STG == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+#LATINOBAROMETRO WAVE 2015
+
+Latino_Baro_r2015 <- read_sav("Latinobarometro_2015_Eng.sav")
+
+Latino_Baro_r2015$cowcode <- NA
+Latino_Baro_r2015$idenpa <- Latino_Baro_r2015$IDENPA 
+
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 32] <- 'Argentina'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 68] <- 'Bolivia'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 76] <- 'Brazil'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 152] <- 'Chile'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 170] <- 'Colombia'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 188] <- 'Costa Rica'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 214] <- 'Dominican Rep.'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 218] <- 'Ecuador'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 222] <- 'El Salvador'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 320] <- 'Guatemala'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 484] <- 'Mexico'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 558] <- 'Nicaragua'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 591] <- 'Panama'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 600] <- 'Paraguay'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 604] <- 'Peru'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 858] <- 'Uruguay'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 862] <- 'Venezuela'
+
+Latino_Baro_r2015$cowcode <- countryname(Latino_Baro_r2015$idenpa, destination = 'cowc', warn = TRUE)
+
+Latino_Baro_r2015$cowcode[Latino_Baro_r2015$idenpa == 'Dominican Rep.'] <- 'DOM'
+
+
+Latino_Baro_r2015$country_wave <- NA
+Latino_Baro_r2015$wave <- "LATIN15"
+library(stringr)
+Latino_Baro_r2015$country_wave <- str_c(Latino_Baro_r2015$cowcode, "_", Latino_Baro_r2015$wave)
+
+#LATINOBAROMETRO WAVE 2016 Dependent Variable (high to low code order) 
+
+Latino_Baro_r2015$trust_courts <- NA #Judicial Branch
+Latino_Baro_r2015$trust_courts[Latino_Baro_r2015$P16ST.H == 4] <- 1
+Latino_Baro_r2015$trust_courts[Latino_Baro_r2015$P16ST.H == 3] <- 2
+Latino_Baro_r2015$trust_courts[Latino_Baro_r2015$P16ST.H == 2] <- 3
+Latino_Baro_r2015$trust_courts[Latino_Baro_r2015$P16ST.H == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2015$trust_police <- NA
+Latino_Baro_r2015$trust_police[Latino_Baro_r2015$P16TGB.B == 4] <- 1
+Latino_Baro_r2015$trust_police[Latino_Baro_r2015$P16TGB.B == 3] <- 2
+Latino_Baro_r2015$trust_police[Latino_Baro_r2015$P16TGB.B == 2] <- 3
+Latino_Baro_r2015$trust_police[Latino_Baro_r2015$P16TGB.B == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2015$trust_president <- NA
+Latino_Baro_r2015$trust_president[Latino_Baro_r2015$P16ST.G == 4] <- 1
+Latino_Baro_r2015$trust_president[Latino_Baro_r2015$P16ST.G == 3] <- 2
+Latino_Baro_r2015$trust_president[Latino_Baro_r2015$P16ST.G == 2] <- 3
+Latino_Baro_r2015$trust_president[Latino_Baro_r2015$P16ST.G == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+Latino_Baro_r2015$trust_parliament <- NA
+Latino_Baro_r2015$trust_parliament[Latino_Baro_r2015$P16ST.F == 4] <- 1
+Latino_Baro_r2015$trust_parliament[Latino_Baro_r2015$P16ST.F == 3] <- 2
+Latino_Baro_r2015$trust_parliament[Latino_Baro_r2015$P16ST.F == 2] <- 3
+Latino_Baro_r2015$trust_parliament[Latino_Baro_r2015$P16ST.F == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+#No Electoral Commission Item
+
+Latino_Baro_r2015$trust_army <- NA
+Latino_Baro_r2015$trust_army[Latino_Baro_r2015$P16TGB.A == 4] <- 1
+Latino_Baro_r2015$trust_army[Latino_Baro_r2015$P16TGB.A == 3] <- 2
+Latino_Baro_r2015$trust_army[Latino_Baro_r2015$P16TGB.A == 2] <- 3
+Latino_Baro_r2015$trust_army[Latino_Baro_r2015$P16TGB.A == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+
+#No Parties Item Included in the Wave. 
+
+
+
+
 
