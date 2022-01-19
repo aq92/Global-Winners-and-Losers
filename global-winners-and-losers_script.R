@@ -1401,7 +1401,7 @@ Latino_Baro_r2008$trust_parties[Latino_Baro_r2008$p28st.c == 1] <- 4 #this impli
 
 #Latinobarometro 2007
 
-t
+#reset
 
 
 #CSES Data
