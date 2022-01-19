@@ -1399,7 +1399,7 @@ Latino_Baro_r2008$trust_parties[Latino_Baro_r2008$p28st.c == 2] <- 3
 Latino_Baro_r2008$trust_parties[Latino_Baro_r2008$p28st.c == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 
-
+#Latinobarometro 2007
 
 
 
