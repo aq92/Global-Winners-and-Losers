@@ -218,6 +218,7 @@ merged_r4_data <- read_sav("merged_r4_data.sav")
 #Create a County-Wave Identifier
 
 library("countrycode")
+merged_r4_data$country <- merged_r4_data$COUNTRY
 
 merged_r4_data$country.name <- NA
 merged_r4_data$country.name[merged_r4_data$country == 1] <- 'Benin'
@@ -250,7 +251,7 @@ merged_r4_data$wave <- "Afr4"
 library(stringr)
 merged_r4_data$country_wave <- str_c(merged_r4_data$cowcode, "_", merged_r4_data$wave)
 
-#AFROBAROMETER WAVE 2 DEPENDENT VARIABLE
+#AFROBAROMETER WAVE 4 DEPENDENT VARIABLE
 merged_r4_data$trust_courts <- NA
 merged_r4_data$trust_courts[merged_r4_data$Q49H == 0] <- 1
 merged_r4_data$trust_courts[merged_r4_data$Q49H == 1] <- 2
@@ -285,12 +286,12 @@ merged_r4_data$trust_electoral[merged_r4_data$Q49C == 3] <- 4 #this implies that
 
 #AFROBAROMETER WAVE 5 
 
-merged_r5_data <- merged_round_5_data_34_countries_2011_2013_last_update_july_2015
-merged_r5_data <- read_sav("merged_r2_data.sav")
+merged_r5_data <- read_sav("merged-round-5-data-34-countries-2011-2013-last-update-july-2015.sav")
 
 #Create a County-Wave Identifier
 
 library("countrycode")
+merged_r5_data$country <- merged_r5_data$COUNTRY
 
 merged_r5_data$country.name <- NA
 merged_r5_data$country.name[merged_r5_data$country == 1] <- 'Algeria'
@@ -385,6 +386,7 @@ merged_r6_data <- merged_r6_data_2016_36countries2
 #Create a County-Wave Identifier
 
 library("countrycode")
+merged_r6_data$country <- merged_r6_data$COUNTRY 
 
 merged_r6_data$country.name <- NA
 merged_r6_data$country.name[merged_r6_data$country == 1] <- 'Algeria'
@@ -478,6 +480,8 @@ merged_r7_data <- r7_merged_data_34ctry_release
 #Create a County-Wave Identifier
 
 library("countrycode")
+
+merged_r7_data$country <- merged_r7_data$COUNTRY
 
 merged_r7_data$country.name <- NA
 merged_r7_data$country.name[merged_r7_data$country == 1] <- 'Benin'
@@ -584,7 +588,7 @@ WVS_TimeSeries_1981_2020_spss_v2_0$wave <- str_c(WVS_TimeSeries_1981_2020_spss_v
 
 #Here we a new variable, wave, that show what survey AND wave the respondent is from. For example 'WV2'
 
-WVS_TimeSeries_1981_2020_spss_v2_0$country_wave <- str_c(WVS_TimeSeries_1981_2020_spss_v2_0$cowcode, "_", WVS_TimeSeries_1981_2020_spss_v2_0$wave)
+WVS_TimeSeries_1981_2020_spss_v2_0$country_wave <- str_c(WVS_TimeSeries_1981_2020_spss_v2_0$country, "_", WVS_TimeSeries_1981_2020_spss_v2_0$wave)
 
 
 #World Values Survey Dependent Variable (Please note that, according to the variable and equivalences excel file, that item are coded from high confidence to low in the WVS)
@@ -641,47 +645,49 @@ Latino_Baro_r2020$country_wave <- str_c(Latino_Baro_r2020$cowcode, "_", Latino_B
 
 #LATINOBAROMETRO WAVE 2020 Dependent Variable (high to low code order) 
 
+#For all items change values to numeric:
+
 Latino_Baro_r2020$trust_courts <- NA #Judicial Branch
-Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 4] <- 1
-Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 3] <- 2
-Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 2] <- 3
-Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == "No trust"] <- 1
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == "Little"] <- 2
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == "Some"] <- 3
+Latino_Baro_r2020$trust_courts[Latino_Baro_r2020$p13st_c == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2020$trust_police <- NA
-Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 4] <- 1
-Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 3] <- 2
-Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 2] <- 3
-Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == "No trust"] <- 1
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == "Little"] <- 2
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == "Some"] <- 3
+Latino_Baro_r2020$trust_police[Latino_Baro_r2020$P13STGBS_B == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2020$trust_president <- NA
-Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 4] <- 1
-Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 3] <- 2
-Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 2] <- 3
-Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == "No trust"] <- 1
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == "Little"] <- 2
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == "Some"] <- 3
+Latino_Baro_r2020$trust_president[Latino_Baro_r2020$p13st_i == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2020$trust_parliament <- NA
-Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 4] <- 1
-Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 3] <- 2
-Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 2] <- 3
-Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == "No trust"] <- 1
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == "Little"] <- 2
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == "Some"] <- 3
+Latino_Baro_r2020$trust_parliament[Latino_Baro_r2020$p13st_d == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2020$trust_electoral <- NA
-Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 4] <- 1
-Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 3] <- 2
-Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 2] <- 3
-Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == "No trust"] <- 1
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == "Little"] <- 2
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == "Some"] <- 3
+Latino_Baro_r2020$trust_electoral[Latino_Baro_r2020$p13st_h == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2020$trust_parties  <- NA
-Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 4] <- 1
-Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 3] <- 2
-Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 2] <- 3
-Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == "No trust"] <- 1
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == "Little"] <- 2
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == "Some"] <- 3
+Latino_Baro_r2020$trust_parties[Latino_Baro_r2020$p13st_g == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2020$trust_army <- NA
-Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 4] <- 1
-Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 3] <- 2
-Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 2] <- 3
-Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == "No trust"] <- 1
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == "Little"] <- 2
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == "Some"] <- 3
+Latino_Baro_r2020$trust_army[Latino_Baro_r2020$P13STGBS_A == "A lot"] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 #LATINOBAROMETRO WAVE 2018 NO CODEBOOK FOR 2018. I CAN FIGURE THE CODING OUT BY LOOKING AT LABEL. BUT THE LABELS ARE IN SPANISH.
 
@@ -850,26 +856,26 @@ Latino_Baro_r2016$trust_parties[Latino_Baro_r2016$P13STG == 1] <- 4 #this implie
 Latino_Baro_r2015 <- read_sav("Latinobarometro_2015_Eng.sav")
 
 Latino_Baro_r2015$cowcode <- NA
-Latino_Baro_r2015$idenpa <- Latino_Baro_r2015$IDENPA 
+Latino_Baro_r2015$idenpa <- NA
 
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 152] <- 'Chile'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 591] <- 'Panama'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 604] <- 'Peru'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2015$idenpa[Latino_Baro_r2015$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 32] <- 'Argentina'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 68] <- 'Bolivia'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 76] <- 'Brazil'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 152] <- 'Chile'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 170] <- 'Colombia'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 188] <- 'Costa Rica'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 214] <- 'Dominican Rep.'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 218] <- 'Ecuador'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 222] <- 'El Salvador'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 320] <- 'Guatemala'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 484] <- 'Mexico'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 558] <- 'Nicaragua'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 591] <- 'Panama'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 600] <- 'Paraguay'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 604] <- 'Peru'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 858] <- 'Uruguay'
+Latino_Baro_r2015$idenpa[Latino_Baro_r2015$IDENPA == 862] <- 'Venezuela'
 
 Latino_Baro_r2015$cowcode <- countryname(Latino_Baro_r2015$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -923,26 +929,26 @@ Latino_Baro_r2015$trust_army[Latino_Baro_r2015$P16TGB.A == 1] <- 4 #this implies
 Latino_Baro_r2013 <- read_sav("Latinobarometro2013Eng.sav")
 
 Latino_Baro_r2013$cowcode <- NA
-Latino_Baro_r2013$idenpa <- Latino_Baro_r2013$IDENPA 
+Latino_Baro_r2013$idenpa <- NA
 
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 152] <- 'Chile'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 591] <- 'Panama'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 604] <- 'Peru'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2013$idenpa[Latino_Baro_r2013$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 32] <- 'Argentina'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 68] <- 'Bolivia'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 76] <- 'Brazil'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 152] <- 'Chile'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 170] <- 'Colombia'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 188] <- 'Costa Rica'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 214] <- 'Dominican Rep.'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 218] <- 'Ecuador'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 222] <- 'El Salvador'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 320] <- 'Guatemala'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 484] <- 'Mexico'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 558] <- 'Nicaragua'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 591] <- 'Panama'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 600] <- 'Paraguay'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 604] <- 'Peru'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 858] <- 'Uruguay'
+Latino_Baro_r2013$idenpa[Latino_Baro_r2013$IDENPA == 862] <- 'Venezuela'
 
 Latino_Baro_r2013$cowcode <- countryname(Latino_Baro_r2013$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -951,11 +957,11 @@ Latino_Baro_r2013$cowcode[Latino_Baro_r2013$idenpa == 'Dominican Rep.'] <- 'DOM'
 
 
 Latino_Baro_r2013$country_wave <- NA
-Latino_Baro_r2013$wave <- "LATIN15"
+Latino_Baro_r2013$wave <- "LATIN13"
 library(stringr)
 Latino_Baro_r2013$country_wave <- str_c(Latino_Baro_r2013$cowcode, "_", Latino_Baro_r2013$wave)
 
-#LATINOBAROMETRO WAVE 2016 Dependent Variable (high to low code order) 
+#LATINOBAROMETRO WAVE 2013 Dependent Variable (high to low code order) 
 
 Latino_Baro_r2013$trust_courts <- NA #Judicial Branch
 Latino_Baro_r2013$trust_courts[Latino_Baro_r2013$P26TGB.E == 4] <- 1
@@ -1003,26 +1009,28 @@ Latino_Baro_r2013$trust_parties[Latino_Baro_r2013$P26TGB.G == 1] <- 4 #this impl
 Latino_Baro_r2011 <- read_dta("Latinobarometro_2011_eng.dta")
 
 Latino_Baro_r2011$cowcode <- NA
-Latino_Baro_r2011$idenpa <- Latino_Baro_r2011$idenpa 
 
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 152] <- 'Chile'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 591] <- 'Panama'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 604] <- 'Peru'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2011$idenpa1 <- Latino_Baro_r2011$idenpa
+Latino_Baro_r2011$idenpa <- NA
+
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2011$idenpa[Latino_Baro_r2011$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2011$cowcode <- countryname(Latino_Baro_r2011$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1035,7 +1043,7 @@ Latino_Baro_r2011$wave <- "LATIN11"
 library(stringr)
 Latino_Baro_r2011$country_wave <- str_c(Latino_Baro_r2011$cowcode, "_", Latino_Baro_r2011$wave)
 
-#LATINOBAROMETRO WAVE 20@@ Dependent Variable (high to low code order) 
+#LATINOBAROMETRO WAVE 2011 Dependent Variable (high to low code order) 
 
 Latino_Baro_r2011$trust_courts <- NA #Judicial Branch
 Latino_Baro_r2011$trust_courts[Latino_Baro_r2011$P22ST_B == 4] <- 1
@@ -1083,26 +1091,26 @@ Latino_Baro_r2011$trust_parties[Latino_Baro_r2011$P22ST_C == 1] <- 4 #this impli
 Latino_Baro_r2010 <- read_sav("Latinobarometro_2010_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2010$cowcode <- NA
-Latino_Baro_r2010$idenpa <- Latino_Baro_r2010$IDENPA 
+Latino_Baro_r2010$idenpa <- NA
 
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 152] <- 'Chile'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 591] <- 'Panama'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 604] <- 'Peru'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 32] <- 'Argentina'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 68] <- 'Bolivia'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 76] <- 'Brazil'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 152] <- 'Chile'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 170] <- 'Colombia'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 188] <- 'Costa Rica'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 214] <- 'Dominican Rep.'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 218] <- 'Ecuador'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 222] <- 'El Salvador'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 320] <- 'Guatemala'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 484] <- 'Mexico'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 558] <- 'Nicaragua'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 591] <- 'Panama'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 600] <- 'Paraguay'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 604] <- 'Peru'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 858] <- 'Uruguay'
+Latino_Baro_r2010$idenpa[Latino_Baro_r2010$IDENPA == 862] <- 'Venezuela'
 
 Latino_Baro_r2010$cowcode <- countryname(Latino_Baro_r2010$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1115,7 +1123,7 @@ Latino_Baro_r2010$wave <- "LATIN10"
 library(stringr)
 Latino_Baro_r2010$country_wave <- str_c(Latino_Baro_r2010$cowcode, "_", Latino_Baro_r2010$wave)
 
-#LATINOBAROMETRO WAVE 20@@ Dependent Variable (high to low code order) 
+#LATINOBAROMETRO WAVE 2010 Dependent Variable (high to low code order) 
 
 Latino_Baro_r2010$trust_courts <- NA #Judicial Branch
 Latino_Baro_r2010$trust_courts[Latino_Baro_r2010$P20ST.B == 4] <- 1
@@ -1153,117 +1161,38 @@ Latino_Baro_r2010$trust_army[Latino_Baro_r2010$P20ST.D == 2] <- 3
 Latino_Baro_r2010$trust_army[Latino_Baro_r2010$P20ST.D == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2010$trust_parties  <- NA
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 4] <- 1
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 3] <- 2
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 2] <- 3
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
-
-
-#LATINOBAROMETRO WAVE 2010
-
-Latino_Baro_r2010 <- read_sav("Latinobarometro_2010_datos_eng_v2014_06_27.sav")
-
-Latino_Baro_r2010$cowcode <- NA
-Latino_Baro_r2010$idenpa <- Latino_Baro_r2010$IDENPA 
-
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 152] <- 'Chile'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 591] <- 'Panama'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 604] <- 'Peru'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2010$idenpa[Latino_Baro_r2010$idenpa == 862] <- 'Venezuela'
-
-Latino_Baro_r2010$cowcode <- countryname(Latino_Baro_r2010$idenpa, destination = 'cowc', warn = TRUE)
-
-#For some reason spain is sampled in this waves. Need to figure out what is going on. 
-Latino_Baro_r2010$cowcode[Latino_Baro_r2010$idenpa == 'Dominican Rep.'] <- 'DOM'
-
-
-Latino_Baro_r2010$country_wave <- NA
-Latino_Baro_r2010$wave <- "LATIN10"
-library(stringr)
-Latino_Baro_r2010$country_wave <- str_c(Latino_Baro_r2010$cowcode, "_", Latino_Baro_r2010$wave)
-
-#LATINOBAROMETRO WAVE 20@@ Dependent Variable (high to low code order) 
-
-Latino_Baro_r2010$trust_courts <- NA #Judicial Branch
-Latino_Baro_r2010$trust_courts[Latino_Baro_r2010$P20ST.B == 4] <- 1
-Latino_Baro_r2010$trust_courts[Latino_Baro_r2010$P20ST.B == 3] <- 2
-Latino_Baro_r2010$trust_courts[Latino_Baro_r2010$P20ST.B == 2] <- 3
-Latino_Baro_r2010$trust_courts[Latino_Baro_r2010$P20ST.B == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
-
-Latino_Baro_r2010$trust_police <- NA
-Latino_Baro_r2010$trust_police[Latino_Baro_r2010$P18ST.C == 4] <- 1
-Latino_Baro_r2010$trust_police[Latino_Baro_r2010$P18ST.C == 3] <- 2
-Latino_Baro_r2010$trust_police[Latino_Baro_r2010$P18ST.C == 2] <- 3
-Latino_Baro_r2010$trust_police[Latino_Baro_r2010$P18ST.C == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
-
-#Unlike more recent waves, Police and Armed forces are asked along with other "non-political" items. 
-
-#Instead of Trust in "President" this item is trust in government.
-Latino_Baro_r2010$trust_president <- NA
-Latino_Baro_r2010$trust_president[Latino_Baro_r2010$P18ST.A == 4] <- 1
-Latino_Baro_r2010$trust_president[Latino_Baro_r2010$P18ST.A == 3] <- 2
-Latino_Baro_r2010$trust_president[Latino_Baro_r2010$P18ST.A == 2] <- 3
-Latino_Baro_r2010$trust_president[Latino_Baro_r2010$P18ST.A == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
-
-Latino_Baro_r2010$trust_parliament <- NA
-Latino_Baro_r2010$trust_parliament[Latino_Baro_r2010$P20ST.A == 4] <- 1
-Latino_Baro_r2010$trust_parliament[Latino_Baro_r2010$P20ST.A == 3] <- 2
-Latino_Baro_r2010$trust_parliament[Latino_Baro_r2010$P20ST.A == 2] <- 3
-Latino_Baro_r2010$trust_parliament[Latino_Baro_r2010$P20ST.A == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
-
-#No Electoral Commission Item
-
-Latino_Baro_r2010$trust_army <- NA
-Latino_Baro_r2010$trust_army[Latino_Baro_r2010$P20ST.D == 4] <- 1
-Latino_Baro_r2010$trust_army[Latino_Baro_r2010$P20ST.D == 3] <- 2
-Latino_Baro_r2010$trust_army[Latino_Baro_r2010$P20ST.D == 2] <- 3
-Latino_Baro_r2010$trust_army[Latino_Baro_r2010$P20ST.D == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
-
-Latino_Baro_r2010$trust_parties  <- NA
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 4] <- 1
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 3] <- 2
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 2] <- 3
-Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST_C == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST.C == 4] <- 1
+Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST.C == 3] <- 2
+Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST.C == 2] <- 3
+Latino_Baro_r2010$trust_parties[Latino_Baro_r2010$P20ST.C == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 #LATINOBAROMETRO WAVE 2009
 
 Latino_Baro_r2009 <- read_sav("Latinobarometro_2009_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2009$cowcode <- NA
-Latino_Baro_r2009$idenpa <- Latino_Baro_r2009$IDENPA 
 
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 152] <- 'Chile'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 591] <- 'Panama'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 604] <- 'Peru'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2009$idenpa1 <- Latino_Baro_r2009$idenpa
+
+Latino_Baro_r2009$idenpa <- NA
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2009$idenpa[Latino_Baro_r2009$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2009$cowcode <- countryname(Latino_Baro_r2009$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1324,26 +1253,28 @@ Latino_Baro_r2009$trust_parties[Latino_Baro_r2009$p26st.c == 1] <- 4 #this impli
 Latino_Baro_r2008 <- read_sav("Latinobarometro_2008_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2008$cowcode <- NA
-Latino_Baro_r2008$idenpa <- Latino_Baro_r2008$IDENPA 
 
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 152] <- 'Chile'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 591] <- 'Panama'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 604] <- 'Peru'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2008$idenpa1 <- Latino_Baro_r2008$idenpa
+
+Latino_Baro_r2008$idenpa <- NA
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2008$idenpa[Latino_Baro_r2008$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2008$cowcode <- countryname(Latino_Baro_r2008$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1356,7 +1287,7 @@ Latino_Baro_r2008$wave <- "LATIN08"
 library(stringr)
 Latino_Baro_r2008$country_wave <- str_c(Latino_Baro_r2008$cowcode, "_", Latino_Baro_r2008$wave)
 
-#LATINOBAROMETRO WAVE 20@@ Dependent Variable (high to low code order) 
+#LATINOBAROMETRO WAVE 2008 Dependent Variable (high to low code order) 
 
 Latino_Baro_r2008$trust_courts <- NA #Judicial Branch
 Latino_Baro_r2008$trust_courts[Latino_Baro_r2008$p28st.b == 4] <- 1
@@ -2325,12 +2256,18 @@ Latino_Baro_r1995$trust_parties[Latino_Baro_r1995$p27j == 3] <- 2
 Latino_Baro_r1995$trust_parties[Latino_Baro_r1995$p27j == 2] <- 3
 Latino_Baro_r1995$trust_parties[Latino_Baro_r1995$p27j == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
-
-
-
 #CSES Data
 
 cses_imd <- read_dta("cses_imd.dta")
+
+
+#Append data to conduct confirmatory factor analysis:
+
+  #Items that were used by Mauk (Government, Parliament, Police, Army)
+
+rbind()
+
+
 
 
 
