@@ -1335,25 +1335,27 @@ Latino_Baro_r2008$trust_parties[Latino_Baro_r2008$p28st.c == 1] <- 4 #this impli
 Latino_Baro_r2007 <- read_sav("Latinobarometro_2007_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2007$cowcode <- NA
+Latino_Baro_r2007$idenpa1 <- Latino_Baro_r2007$idenpa
+Latino_Baro_r2007$idenpa <- NA
 
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 152] <- 'Chile'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 591] <- 'Panama'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 604] <- 'Peru'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2007$idenpa[Latino_Baro_r2007$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2007$cowcode <- countryname(Latino_Baro_r2007$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1414,25 +1416,27 @@ Latino_Baro_r2007$trust_parties[Latino_Baro_r2007$p27st.e == 1] <- 4 #this impli
 Latino_Baro_r2006 <- read_sav("Latinobarometro_2006_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2006$cowcode <- NA
+Latino_Baro_r2006$idenpa1 <- Latino_Baro_r2006$idenpa
+Latino_Baro_r2006$idenpa <- NA
 
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 152] <- 'Chile'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 591] <- 'Panama'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 604] <- 'Peru'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2006$idenpa[Latino_Baro_r2006$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2006$cowcode <- countryname(Latino_Baro_r2006$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1476,10 +1480,10 @@ Latino_Baro_r2006$trust_parliament[Latino_Baro_r2006$p24st.f == 2] <- 3
 Latino_Baro_r2006$trust_parliament[Latino_Baro_r2006$p24st.f == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2006$trust_electoral <- NA
-Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p13st_h == 4] <- 1
-Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p13st_h == 3] <- 2
-Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p13st_h == 2] <- 3
-Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p13st_h == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p35st.d == 4] <- 1
+Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p35st.d == 3] <- 2
+Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p35st.d == 2] <- 3
+Latino_Baro_r2006$trust_electoral[Latino_Baro_r2006$p35st.d == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2006$trust_army <- NA
 Latino_Baro_r2006$trust_army[Latino_Baro_r2006$p32st.e == 4] <- 1
@@ -1498,25 +1502,27 @@ Latino_Baro_r2006$trust_parties[Latino_Baro_r2006$p24st.c == 1] <- 4 #this impli
 Latino_Baro_r2005 <- read_sav("Latinobarometro_2005_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2005$cowcode <- NA
+Latino_Baro_r2005$idenpa1 <- Latino_Baro_r2005$idenpa
+Latino_Baro_r2005$idenpa <- NA
 
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 152] <- 'Chile'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 591] <- 'Panama'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 604] <- 'Peru'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1== 214] <- 'Dominican Rep.'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2005$idenpa[Latino_Baro_r2005$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2005$cowcode <- countryname(Latino_Baro_r2005$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1560,10 +1566,10 @@ Latino_Baro_r2005$trust_parliament[Latino_Baro_r2005$p45sta == 2] <- 3
 Latino_Baro_r2005$trust_parliament[Latino_Baro_r2005$p45sta == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2005$trust_army <- NA
-Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p32st.e == 4] <- 1
-Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p32st.e == 3] <- 2
-Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p32st.e == 2] <- 3
-Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p32st.e == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
+Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p42stb == 4] <- 1
+Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p42stb == 3] <- 2
+Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p42stb == 2] <- 3
+Latino_Baro_r2005$trust_army[Latino_Baro_r2005$p42stb == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
 Latino_Baro_r2005$trust_parties  <- NA
 Latino_Baro_r2005$trust_parties[Latino_Baro_r2005$p45stb == 4] <- 1
@@ -1574,27 +1580,29 @@ Latino_Baro_r2005$trust_parties[Latino_Baro_r2005$p45stb == 1] <- 4 #this implie
 #Latinobarometro 2004
 
 Latino_Baro_r2004 <- read_sav("Latinobarometro_2004_datos_eng_v2014_06_27.sav")
-
 Latino_Baro_r2004$cowcode <- NA
+Latino_Baro_r2004$idenpa1 <- Latino_Baro_r2004$idenpa
+Latino_Baro_r2004$idenpa <- NA
 
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 152] <- 'Chile'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 591] <- 'Panama'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 604] <- 'Peru'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa == 862] <- 'Venezuela'
+
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2004$idenpa[Latino_Baro_r2004$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2004$cowcode <- countryname(Latino_Baro_r2004$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1652,25 +1660,27 @@ Latino_Baro_r2004$trust_parties[Latino_Baro_r2004$p34std == 1] <- 4 #this implie
 Latino_Baro_r2003 <- read_sav("Latinobarometro_2003_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2003$cowcode <- NA
+Latino_Baro_r2003$idenpa1 <- Latino_Baro_r2003$idenpa
+Latino_Baro_r2003$idenpa <- NA
 
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 152] <- 'Chile'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 591] <- 'Panama'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 604] <- 'Peru'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2003$idenpa[Latino_Baro_r2003$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2003$cowcode <- countryname(Latino_Baro_r2003$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1728,25 +1738,27 @@ Latino_Baro_r2003$trust_parties[Latino_Baro_r2003$p21std == 1] <- 4 #this implie
 Latino_Baro_r2002 <- read_sav("Latinobarometro_2002_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2002$cowcode <- NA
+Latino_Baro_r2002$idenpa1 <- Latino_Baro_r2002$idenpa
+Latino_Baro_r2002$idenpa <- NA
 
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 152] <- 'Chile'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 591] <- 'Panama'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 604] <- 'Peru'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2002$idenpa[Latino_Baro_r2002$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2002$cowcode <- countryname(Latino_Baro_r2002$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1804,25 +1816,27 @@ Latino_Baro_r2002$trust_parties[Latino_Baro_r2002$p34stf == 1] <- 4 #this implie
 Latino_Baro_r2001 <- read_sav("Latinobarometro_2001_datos_english_v2014_06_27.sav")
 
 Latino_Baro_r2001$cowcode <- NA
+Latino_Baro_r2001$idenpa1 <- Latino_Baro_r2001$idenpa
+Latino_Baro_r2001$idenpa <- NA
 
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 152] <- 'Chile'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 591] <- 'Panama'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 604] <- 'Peru'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r2001$idenpa[Latino_Baro_r2001$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r2001$cowcode <- countryname(Latino_Baro_r2001$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1876,26 +1890,26 @@ Latino_Baro_r2001$trust_parties[Latino_Baro_r2001$p61stg == 1] <- 4 #this implie
 Latino_Baro_r2000 <- read_sav("Latinobarometro_2000_datos_eng_v2014_06_27.sav")
 
 Latino_Baro_r2000$cowcode <- NA
-Latino_Baro_r2000$idenpa <- Latino_Baro_r2000$IDENPA
+Latino_Baro_r2000$idenpa <- NA
 
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 32] <- 'Argentina'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 76] <- 'Brazil'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 152] <- 'Chile'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 170] <- 'Colombia'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 340] <- 'Honduras'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 484] <- 'Mexico'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 591] <- 'Panama'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 604] <- 'Peru'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r2000$idenpa[Latino_Baro_r2000$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 32] <- 'Argentina'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 68] <- 'Bolivia'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 76] <- 'Brazil'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 152] <- 'Chile'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 170] <- 'Colombia'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 188] <- 'Costa Rica'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 214] <- 'Dominican Rep.'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 218] <- 'Ecuador'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 222] <- 'El Salvador'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 320] <- 'Guatemala'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 340] <- 'Honduras'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 484] <- 'Mexico'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 558] <- 'Nicaragua'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 591] <- 'Panama'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 600] <- 'Paraguay'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 604] <- 'Peru'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 858] <- 'Uruguay'
+Latino_Baro_r2000$idenpa[Latino_Baro_r2000$IDENPA == 862] <- 'Venezuela'
 
 Latino_Baro_r2000$cowcode <- countryname(Latino_Baro_r2000$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -1953,26 +1967,27 @@ Latino_Baro_r2000$trust_parties[Latino_Baro_r2000$P35ST.G == 1] <- 4 #this impli
 Latino_Baro_r1998 <- read_sav("Latinobarometro_1998_datos_english_v2014_06_27.sav")
 
 Latino_Baro_r1998$cowcode <- NA
-#Latino_Baro_r1998$idenpa <- Latino_Baro_r1998$IDENPA
+Latino_Baro_r1998$idenpa1 <- Latino_Baro_r1998$idenpa
+Latino_Baro_r1998$idenpa <- NA 
 
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 32] <- 'Argentina'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 76] <- 'Brazil'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 152] <- 'Chile'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 170] <- 'Colombia'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 340] <- 'Honduras'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 484] <- 'Mexico'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 591] <- 'Panama'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 604] <- 'Peru'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r1998$idenpa[Latino_Baro_r1998$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r1998$cowcode <- countryname(Latino_Baro_r1998$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -2030,26 +2045,27 @@ Latino_Baro_r1998$trust_parties[Latino_Baro_r1998$sp38g == 1] <- 4 #this implies
 Latino_Baro_r1997 <- read_sav("Latinobarometro_1997_datos_english_spss_v2014_06_27.sav")
 
 Latino_Baro_r1997$cowcode <- NA
-#Latino_Baro_r1997$idenpa <- Latino_Baro_r1997$IDENPA
+Latino_Baro_r1997$idenpa1 <- Latino_Baro_r1997$idenpa
+Latino_Baro_r1997$idenpa <- NA
 
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 32] <- 'Argentina'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 76] <- 'Brazil'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 152] <- 'Chile'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 170] <- 'Colombia'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 340] <- 'Honduras'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 484] <- 'Mexico'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 591] <- 'Panama'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 604] <- 'Peru'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 32] <- 'Argentina'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 68] <- 'Bolivia'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 76] <- 'Brazil'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 152] <- 'Chile'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 170] <- 'Colombia'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 188] <- 'Costa Rica'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 214] <- 'Dominican Rep.'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 218] <- 'Ecuador'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 222] <- 'El Salvador'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 320] <- 'Guatemala'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 340] <- 'Honduras'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 484] <- 'Mexico'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 558] <- 'Nicaragua'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 591] <- 'Panama'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 600] <- 'Paraguay'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 604] <- 'Peru'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 858] <- 'Uruguay'
+Latino_Baro_r1997$idenpa[Latino_Baro_r1997$idenpa1 == 862] <- 'Venezuela'
 
 Latino_Baro_r1997$cowcode <- countryname(Latino_Baro_r1997$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -2105,28 +2121,30 @@ Latino_Baro_r1997$trust_parties[Latino_Baro_r1997$sp63g == 1] <- 4 #this implies
 #Latinobarometro 1996
 
 Latino_Baro_r1996 <- read_sav("Latinobarometro_1996_datos_english_spss_v2014_06_27.sav")
+Latino_Baro_r1996$idenpa <- NA
 
 Latino_Baro_r1996$cowcode <- NA
+
 #Latino_Baro_r1996$idenpa <- Latino_Baro_r1996$IDENPA
 
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 32] <- 'Argentina'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 76] <- 'Brazil'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 152] <- 'Chile'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 170] <- 'Colombia'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 340] <- 'Honduras'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 484] <- 'Mexico'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 591] <- 'Panama'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 604] <- 'Peru'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r1996$idenpa[Latino_Baro_r1996$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 32] <- 'Argentina'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 68] <- 'Bolivia'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 76] <- 'Brazil'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 152] <- 'Chile'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 170] <- 'Colombia'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 188] <- 'Costa Rica'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 214] <- 'Dominican Rep.'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 218] <- 'Ecuador'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 222] <- 'El Salvador'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 320] <- 'Guatemala'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 340] <- 'Honduras'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 484] <- 'Mexico'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 558] <- 'Nicaragua'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 591] <- 'Panama'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 600] <- 'Paraguay'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 604] <- 'Peru'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 858] <- 'Uruguay'
+Latino_Baro_r1996$idenpa[Latino_Baro_r1996$pais == 862] <- 'Venezuela'
 
 Latino_Baro_r1996$cowcode <- countryname(Latino_Baro_r1996$idenpa, destination = 'cowc', warn = TRUE)
 
@@ -2182,28 +2200,27 @@ Latino_Baro_r1996$trust_parties[Latino_Baro_r1996$p33j == 1] <- 4 #this implies 
 #Latinobarometro 1995
 
 Latino_Baro_r1995 <- read_sav("Latinobarometro_1995_data_english_spss_v2014_06_27.sav")
-
 Latino_Baro_r1995$cowcode <- NA
-#Latino_Baro_r1995$idenpa <- Latino_Baro_r1995$IDENPA
+Latino_Baro_r1995$idenpa <- NA
 
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 32] <- 'Argentina'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 68] <- 'Bolivia'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 76] <- 'Brazil'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 152] <- 'Chile'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 170] <- 'Colombia'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 188] <- 'Costa Rica'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 214] <- 'Dominican Rep.'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 218] <- 'Ecuador'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 222] <- 'El Salvador'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 320] <- 'Guatemala'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 340] <- 'Honduras'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 484] <- 'Mexico'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 558] <- 'Nicaragua'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 591] <- 'Panama'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 600] <- 'Paraguay'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 604] <- 'Peru'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 858] <- 'Uruguay'
-Latino_Baro_r1995$idenpa[Latino_Baro_r1995$idenpa == 862] <- 'Venezuela'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 32] <- 'Argentina'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 68] <- 'Bolivia'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 76] <- 'Brazil'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 152] <- 'Chile'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 170] <- 'Colombia'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 188] <- 'Costa Rica'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 214] <- 'Dominican Rep.'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 218] <- 'Ecuador'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 222] <- 'El Salvador'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 320] <- 'Guatemala'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 340] <- 'Honduras'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 484] <- 'Mexico'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 558] <- 'Nicaragua'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 591] <- 'Panama'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 600] <- 'Paraguay'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 604] <- 'Peru'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 858] <- 'Uruguay'
+Latino_Baro_r1995$idenpa[Latino_Baro_r1995$pais == 862] <- 'Venezuela'
 
 Latino_Baro_r1995$cowcode <- countryname(Latino_Baro_r1995$idenpa, destination = 'cowc', warn = TRUE)
 
