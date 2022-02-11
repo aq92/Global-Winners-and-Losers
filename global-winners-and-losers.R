@@ -2273,16 +2273,22 @@ Latino_Baro_r1995$trust_parties[Latino_Baro_r1995$p27j == 3] <- 2
 Latino_Baro_r1995$trust_parties[Latino_Baro_r1995$p27j == 2] <- 3
 Latino_Baro_r1995$trust_parties[Latino_Baro_r1995$p27j == 1] <- 4 #this implies that "do not know," "refused to answer", and "Missing data" are coded as missing.   
 
+#Rbind data for factor analysis after setting control because it requires each data to have the same number of columns. 
+
+
+
 #CSES Data
 
 cses_imd <- read_dta("cses_imd.dta")
 
-
 #Append data to conduct confirmatory factor analysis:
 
-  #Items that were used by Mauk (Government, Parliament, Police, Army)
+  #Items that were used by Mauk (Government, Parliament, Police, Army) based on coverage in my data it seem that I can include courts. 
 
-rbind()
+
+#Stata work
+
+
 
 
 
