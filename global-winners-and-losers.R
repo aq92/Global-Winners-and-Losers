@@ -2286,11 +2286,216 @@ cses_imd <- read_dta("cses_imd.dta")
   #Items that were used by Mauk (Government, Parliament, Police, Army) based on coverage in my data it seem that I can include courts. 
 
 
-#Stata work
+#Input PE Scores and Winner Status: 
+
+##        Benin
+
+merged_r3_data$numparties[merged_r3_data$country == 1] <- 6 
+merged_r3_data$numgroup[merged_r3_data$country == 1] <- 4
+merged_r3_data$groupsize1[merged_r3_data$country == 1] <- .5276596
+merged_r3_data$groupsize2[merged_r3_data$country == 1] <- .106383
+merged_r3_data$groupsize3[merged_r3_data$country == 1] <- .2
+merged_r3_data$groupsize4[merged_r3_data$country == 1] <- .1659575
+merged_r3_data$VF[merged_r3_data$country == 1] <- .2468198
+merged_r3_data$VP[merged_r3_data$country == 1] <- .3067054
+merged_r3_data$PVF[merged_r3_data$country == 1] <- .3162217
+merged_r3_data$PVP[merged_r3_data$country == 1] <- .2390216
 
 
+#Coding to merged with epr at individual level
+
+merged_r3_data$to <- NA
+merged_r3_data$ethnic_id <- NA
+
+merged_r3_data$to[merged_r3_data$country == 1] <- 2006 
+
+#Fon
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 120] <- 43401000
+
+#Adja
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 121] <- 43404000
+
+#Northern
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 122] <- 43403000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 123] <- 43403000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 126] <- 43403000
+
+#Southeastern
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 124] <- 43402000
+
+#Winner 
+
+  #Elections March 4, 2001. Survey April-May 2005. Kerekou in office. 
+
+  #Voter Winner and Loser
+  merged_r3_data$winner <- 0 
+  merged_r3_data$winner[merged_r3_data$q99 == 126] <- 1
+  
+  #Refused to and I don't know are dropped. They did not answer the question. 
+  merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+  merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+  
+  #Non Voter 
+  merged_r3_data$didnt_vote <- 0
+  merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+  
+  #Loser
+  merged_r3_data$loser <- 1 
+  merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 1] 
+  
+  #Close Party Winner/Loser 
+  merged_r3_data$winner_party <- 0 
+  merged_r3_data$winner_party[merged_r3_data$q86 == 126] <- 1 
+  merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+  merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+  
+  merged_r3_data$loser_party <- 1 
+  merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+  
+  merged_r3_data$didnt_party <- 0
+  merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+  merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+  merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+  merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+  
+
+##        Botswana
+
+merged_r3_data$numparties[merged_r3_data$country == 2] <- 3 
+merged_r3_data$numgroup[merged_r3_data$country == 2] <- 6
+merged_r3_data$groupsize1[merged_r3_data$country == 2] <- .6271451
+merged_r3_data$groupsize2[merged_r3_data$country == 2] <- .1154446
+merged_r3_data$groupsize3[merged_r3_data$country == 2] <- .0296412
+merged_r3_data$groupsize4[merged_r3_data$country == 2] <- .0468019
+merged_r3_data$groupsize5[merged_r3_data$country == 2] <- .0577223
+merged_r3_data$groupsize6[merged_r3_data$country == 2] <- .1232449
+merged_r3_data$VF[merged_r3_data$country == 2] <- .1001973
+merged_r3_data$VP[merged_r3_data$country == 2] <- .1195794
+merged_r3_data$PVF[merged_r3_data$country == 2] <- .06515
+merged_r3_data$PVP[merged_r3_data$country == 2] <- .1044197
 
 
+merged_r3_data$to[merged_r3_data$country == 2] <- 2021
+
+#Tswana
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 142] <- 57101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 140] <- 57101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 143] <- 57101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 146] <- 57101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 153] <- 57101000
+
+#Kgalagadi
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 154] <- 57103000
+
+#Herero/Mbanderu
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 145] <- 57104000
+
+#Yeyi
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 155] <- 57106000
+
+#Mbukushu
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 157] <- 57107000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 159] <- 57107000
+
+#Birwa
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 150] <- 57108000
+
+#Winner 
+
+#Elections March 4, 2001. Survey April-May 2005. Kerekou in office. 
+
+#Voter Winner and Loser
+merged_r3_data$winner[merged_r3_data$q99 == 142] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question. 
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 2] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 142] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+merged_r3_data$didnt_party <- 0
+merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+##      Cape Verde is dropped because there is not ethnic variation in the EPR dataset.  
+
+##      Ghana
+
+merged_r3_data$numparties[merged_r3_data$country == 4] <- 4  
+merged_r3_data$numgroup[merged_r3_data$country == 4] <- 5
+merged_r3_data$groupsize1[merged_r3_data$country == 4] <- .2179487
+merged_r3_data$groupsize2[merged_r3_data$country == 4] <- .2039627
+merged_r3_data$groupsize3[merged_r3_data$country == 4] <- .1561772
+merged_r3_data$groupsize4[merged_r3_data$country == 4] <- .0582751
+merged_r3_data$groupsize5[merged_r3_data$country == 4] <- .3636364
+merged_r3_data$VF[merged_r3_data$country == 4] <- .2001006
+merged_r3_data$VP[merged_r3_data$country == 4] <- .1833669
+merged_r3_data$PVF[merged_r3_data$country == 4] <- .1305456
+merged_r3_data$PVP[merged_r3_data$country == 4] <- .2291155
+
+merged_r3_data$to[merged_r3_data$country == 4] <- 2008
+
+
+#March 10-21, 2005 Suvey data
+
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 180 & merged_r3_data$region == 185] <- 45201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 180 & merged_r3_data$region != 185] <- 45207000
+
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 181] <- 45202000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 182] <- 45203000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 183] <- NA
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 184] <- 45206000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 185] <- 45206000
+
+#Winner 
+
+
+#Voter Winner and Loser
+merged_r3_data$winner[merged_r3_data$q99 == 182] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question. 
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 4] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 142] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
 
 
 
