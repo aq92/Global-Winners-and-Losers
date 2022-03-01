@@ -2538,7 +2538,7 @@ merged_r3_data$v2paid_close[merged_r3_data$q86 == 143] <- 2336 #BNF
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 144] <- 3631 #BIP
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 148] <- 3632 #BPP
 
-##      Kenya
+######      Kenya
 
 merged_r3_data$numparties[merged_r3_data$country == 5] <- 4  
 merged_r3_data$numgroup[merged_r3_data$country == 5] <- 7
@@ -2709,6 +2709,82 @@ merged_r3_data$v2paid_close[merged_r3_data$q86 == 242] <- NA #
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 243] <- NA  #
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 249] <- 5869  #UNDD
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 250] <- 5838 #MFM/MPI
+
+##      Malawi 
+
+merged_r3_data$numparties[merged_r3_data$country == 8] <- 3   
+merged_r3_data$numgroup[merged_r3_data$country == 8] <- 3
+merged_r3_data$groupsize1[merged_r3_data$country == 8] <- .4422043  
+merged_r3_data$groupsize2[merged_r3_data$country == 8] <- .4395161
+merged_r3_data$groupsize3[merged_r3_data$country == 8] <- .1182796
+merged_r3_data$VF[merged_r3_data$country == 8] <- .2309065
+merged_r3_data$VP[merged_r3_data$country == 8] <- .3521383
+merged_r3_data$PVF[merged_r3_data$country == 8] <- .2534844
+merged_r3_data$PVP[merged_r3_data$country == 8] <- .3329855
+
+merged_r3_data$to[merged_r3_data$country == 8] <- 2020
+
+#Ethnic ID Malawi 3
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 260] <- 55303000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 261] <- 55303000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 263] <- 55302000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 264] <- 55301000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 266] <- 55301000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 267] <- 55301000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 271] <- 55303000
+
+#Intv June-July 2005
+#Voter Winner and Loser 
+merged_r3_data$winner[merged_r3_data$q99 == 270] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 8] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 270] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 260] <- 3733 #AFROD  
+merged_r3_data$v2paid[merged_r3_data$q99 == 261] <- 4846  #DPP
+merged_r3_data$v2paid[merged_r3_data$q99 == 263] <- 3732 #MCP
+merged_r3_data$v2paid[merged_r3_data$q99 == 266] <- 3735  #NAD
+merged_r3_data$v2paid[merged_r3_data$q99 == 269] <- 3737  #RP
+merged_r3_data$v2paid[merged_r3_data$q99 == 270] <- 3734 #UDF
+
+
+#Party Matching Close
+
+merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 260] <- 3733 #AFROD  
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 261] <- 4846  #DPP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 263] <- 3732 #MCP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 266] <- 3735  #NAD
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 269] <- 3737  #RP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 270] <- 3734 #UDF
 
 
 
