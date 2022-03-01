@@ -2434,6 +2434,31 @@ merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
 merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
 merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
 
+#Party Matching
+merged_r3_data$v2paid <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 120] <- 3831 #SOGLO  - BRP
+merged_r3_data$v2paid[merged_r3_data$q99 == 121] <- 2365 #Houngbedji - PRD
+merged_r3_data$v2paid[merged_r3_data$q99 == 122] <- 2368 #Amoussou - SDP
+merged_r3_data$v2paid[merged_r3_data$q99 == 123] <- NA #
+merged_r3_data$v2paid[merged_r3_data$q99 == 124] <- 4090 #Lafia - UDNS
+merged_r3_data$v2paid[merged_r3_data$q99 == 125] <- NA #Fagbohoun
+merged_r3_data$v2paid[merged_r3_data$q99 == 126] <- 4089 #Kerekou
+merged_r3_data$v2paid[merged_r3_data$q99 == 127] <- NA #
+merged_r3_data$v2paid[merged_r3_data$q99 == 128] <- NA #AGBO - ACD
+merged_r3_data$v2paid[merged_r3_data$q99 == 129] <- NA #Boni - Ind
+
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 120] <- 3831 #SOGLO  - BRP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 121] <- 2365 #Houngbedji - PRD
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 122] <- 2368 #Amoussou - SDP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 123] <- NA #
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 124] <- 4090 #Lafia - UDNS
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 125] <- NA #Fagbohoun
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 126] <- 4089 #Kerekou
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 127] <- NA #
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 128] <- NA #AGBO - ACD
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 129] <- NA #Boni - Ind
+
+
 ##      Cape Verde is dropped because there is not ethnic variation in the EPR dataset.  
 
 ##      Ghana
@@ -2497,5 +2522,203 @@ merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
 #merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
 #merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
 
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == 140] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 141] <- 2337 #BCP
+merged_r3_data$v2paid[merged_r3_data$q99 == 142] <- 2301 #BDP
+merged_r3_data$v2paid[merged_r3_data$q99 == 143] <- 2336 #BNF
+merged_r3_data$v2paid[merged_r3_data$q99 == 144] <- 3631 #BIP
+merged_r3_data$v2paid[merged_r3_data$q99 == 148] <- 3632 #BPP
 
+#Party Matching Close
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 140] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 141] <- 2337 #BCP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 142] <- 2301 #BDP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 143] <- 2336 #BNF
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 144] <- 3631 #BIP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 148] <- 3632 #BPP
+
+##      Kenya
+
+merged_r3_data$numparties[merged_r3_data$country == 5] <- 4  
+merged_r3_data$numgroup[merged_r3_data$country == 5] <- 7
+merged_r3_data$groupsize1[merged_r3_data$country == 5] <- .3451327
+merged_r3_data$groupsize2[merged_r3_data$country == 5] <- .1656131
+merged_r3_data$groupsize3[merged_r3_data$country == 5] <- .1011378
+merged_r3_data$groupsize4[merged_r3_data$country == 5] <- .1415929
+merged_r3_data$groupsize5[merged_r3_data$country == 5] <- .1276865
+merged_r3_data$groupsize6[merged_r3_data$country == 5] <- .0733249
+merged_r3_data$groupsize7[merged_r3_data$country == 5] <- .045512
+
+merged_r3_data$VF[merged_r3_data$country == 5] <- .2971909
+merged_r3_data$VP[merged_r3_data$country == 5] <- .2294833
+merged_r3_data$PVF[merged_r3_data$country == 5] <- .2294833
+merged_r3_data$PVP[merged_r3_data$country == 5] <- .3282574
+
+merged_r3_data$to[merged_r3_data$country == 5] <- 2007
+
+#Matching Ethnic ID Kenya 3
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 200] <- 50103000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 201] <- 50106000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 202] <- 50105000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 203] <- 50102000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 204] <- 50103000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 205] <- 50104000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 206] <- 50101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 207] <- 50101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 208] <- 50107000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 209] <- NA
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 210] <- 50108000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 211] <- NA
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 212] <- 50101000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 215] <- 50103000
+
+
+#Voter Winner and Loser
+merged_r3_data$winner[merged_r3_data$q99 == 201] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 5] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 201] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 201] <- 5834 #NARC not NARC-K that coalition did not start yet.  
+merged_r3_data$v2paid[merged_r3_data$q99 == 202] <- 4858  #LDP
+merged_r3_data$v2paid[merged_r3_data$q99 == 203] <- 3860 #DP
+merged_r3_data$v2paid[merged_r3_data$q99 == 204] <- 3863 #FORD-K 
+merged_r3_data$v2paid[merged_r3_data$q99 == 205] <- 7971 #FORD-P
+merged_r3_data$v2paid[merged_r3_data$q99 == 206] <- 2316 #KANU
+merged_r3_data$v2paid[merged_r3_data$q99 == 207] <- 7932 #NPK
+merged_r3_data$v2paid[merged_r3_data$q99 == 208] <- NA #
+merged_r3_data$v2paid[merged_r3_data$q99 == 209] <- 3862 #FORD-A
+
+
+#Party Matching Close
+merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 995] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 998] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 999] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 201] <- 5834 #NARC not NARC-K that coalition did not start yet.  
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 202] <- 4858  #LDP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 203] <- 3860 #DP
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 204] <- 3863 #FORD-K 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 205] <- 7971 #FORD-P
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 206] <- 2316 #KANU
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 207] <- 7932 #NPK
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 208] <- NA #
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 209] <- 3862 #FORD-A
+
+#           Lesotho is dropped because there is no ethnic variation. 
+
+##          Madagascar 
+
+merged_r3_data$numparties[merged_r3_data$country == 7] <- 6   
+merged_r3_data$numgroup[merged_r3_data$country == 7] <- 2
+merged_r3_data$groupsize1[merged_r3_data$country == 7] <- .3271462 
+merged_r3_data$groupsize2[merged_r3_data$country == 7] <- .6728538
+merged_r3_data$VF[merged_r3_data$country == 7] <- .0630449
+merged_r3_data$VP[merged_r3_data$country == 7] <- .1260898
+merged_r3_data$PVF[merged_r3_data$country == 7] <- .1135868
+merged_r3_data$PVP[merged_r3_data$country == 7] <- .1612592
+
+merged_r3_data$to[merged_r3_data$country == 7] <- 2021
+
+#Matching Ethnic ID Madagacar 3
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 264] <- 58001000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 249] <- 58002000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 250] <- 58001000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 253] <- 58002000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 254] <- 58001000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 257] <- 58001000
+
+#Voter Winner and Loser
+merged_r3_data$winner[merged_r3_data$q99 == 240] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 7] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 240] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 240] <- 5201 #TIM  
+merged_r3_data$v2paid[merged_r3_data$q99 == 241] <- 5311  #AREMA
+merged_r3_data$v2paid[merged_r3_data$q99 == 242] <- NA #
+merged_r3_data$v2paid[merged_r3_data$q99 == 243] <- NA  #
+merged_r3_data$v2paid[merged_r3_data$q99 == 249] <- 5869  #UNDD
+merged_r3_data$v2paid[merged_r3_data$q99 == 250] <- 5838 #MFM/MPI
+
+
+#Party Matching Close
+
+merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 240] <- 5201 #TIM  
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 241] <- 5311  #AREMA
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 242] <- NA #
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 243] <- NA  #
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 249] <- 5869  #UNDD
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 250] <- 5838 #MFM/MPI
+
+
+
+
+
+
+
+
+
+
+
+#May-June 2005 interviews
 
