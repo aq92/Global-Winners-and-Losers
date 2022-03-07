@@ -2775,7 +2775,6 @@ merged_r3_data$v2paid[merged_r3_data$q99 == 266] <- 3735  #NAD
 merged_r3_data$v2paid[merged_r3_data$q99 == 269] <- 3737  #RP
 merged_r3_data$v2paid[merged_r3_data$q99 == 270] <- 3734 #UDF
 
-
 #Party Matching Close
 
 merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
@@ -2786,6 +2785,237 @@ merged_r3_data$v2paid_close[merged_r3_data$q86 == 266] <- 3735  #NAD
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 269] <- 3737  #RP
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 270] <- 3734 #UDF
 
+##          Mali 
+#Surveys from June to July 2005
+
+merged_r3_data$numparties[merged_r3_data$country == 9] <- 7   
+merged_r3_data$numgroup[merged_r3_data$country == 9] <- 2
+merged_r3_data$groupsize1[merged_r3_data$country == 9] <- .9518072  
+merged_r3_data$groupsize2[merged_r3_data$country == 9] <- .0481928
+#merged_r3_data$groupsize3[merged_r3_data$country == 9] <- 
+merged_r3_data$VF[merged_r3_data$country == 9] <- .0335467
+merged_r3_data$VP[merged_r3_data$country == 9] <- .0670935
+merged_r3_data$PVF[merged_r3_data$country == 9] <- .0525594
+merged_r3_data$PVP[merged_r3_data$country == 9] <- .0498803
+
+merged_r3_data$to[merged_r3_data$country == 9] <- 2012
+
+#Ethnic ID MALI 3
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 280] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 281] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 282] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 283] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 284] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 285] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 286] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 287] <- NA
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 288] <- NA
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 289] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 290] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 291] <- 43201000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 291] <- 43203000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 292] <- NA
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 297] <- 43202000
+merged_r3_data$ethnic_id[merged_r3_data$q79 == 298] <- 43201000
+
+
+#############################################
+
+
+
+#Voter Winner and Loser 
+merged_r3_data$winner[merged_r3_data$q99 == 293] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 9] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 293] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+merged_r3_data$nonpartisan <- 0
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 0] <- 1
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 8] <- NA
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 9] <- NA
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 280] <- 2477 #ADEMA  
+merged_r3_data$v2paid[merged_r3_data$q99 == 281] <- 2319  #RPM
+merged_r3_data$v2paid[merged_r3_data$q99 == 282] <- 2478 #CNID
+merged_r3_data$v2paid[merged_r3_data$q99 == 283] <- 2475  #US-RDA
+merged_r3_data$v2paid[merged_r3_data$q99 == 285] <- 6084  #PARENA
+merged_r3_data$v2paid[merged_r3_data$q99 == 286] <- NA #SAI
+merged_r3_data$v2paid[merged_r3_data$q99 == 287] <- 6085 #MPR
+merged_r3_data$v2paid[merged_r3_data$q99 == 288] <- NA #BDIA
+merged_r3_data$v2paid[merged_r3_data$q99 == 289] <- NA #UDD
+merged_r3_data$v2paid[merged_r3_data$q99 == 290] <- NA #RND
+merged_r3_data$v2paid[merged_r3_data$q99 == 291] <- NA #MIRIA
+merged_r3_data$v2paid[merged_r3_data$q99 == 292] <- 2476 #URD
+
+#Party Matching Close
+
+merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 280] <- 2477 #ADEMA  
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 281] <- 2319  #RPM
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 282] <- 2478 #CNID
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 283] <- 2475  #US-RDA
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 285] <- 6084  #PARENA
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 286] <- NA #SAI
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 287] <- 6085 #MPR
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 288] <- NA #BDIA
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 289] <- NA #UDD
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 290] <- NA #RND
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 291] <- NA #MIRIA
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 292] <- 2476 #URD
+
+
+##          Mozambique not included because languages are the main identifier instead of ethnic group. 
+
+#merged_r3_data$numparties[merged_r3_data$country == 10] <-     
+#merged_r3_data$numgroup[merged_r3_data$country == 10] <- 
+#merged_r3_data$groupsize1[merged_r3_data$country == 10] <-   
+#merged_r3_data$groupsize2[merged_r3_data$country == 10] <- 
+#merged_r3_data$groupsize3[merged_r3_data$country == 9] <- 
+#merged_r3_data$VF[merged_r3_data$country == 10] <- 
+#merged_r3_data$VP[merged_r3_data$country == 10] <- 
+#merged_r3_data$PVF[merged_r3_data$country == 10] <- 
+#merged_r3_data$PVP[merged_r3_data$country == 10] <- 
+
+#merged_r3_data$to[merged_r3_data$country == 10] <- 2014
+
+#Interview June 2005
+#Voter Winner and Loser 
+merged_r3_data$winner[merged_r3_data$q99 == 300] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 10] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 300] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+merged_r3_data$nonpartisan <- 0
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 0] <- 1
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 8] <- NA
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 9] <- NA
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 300] <- 2314 #FREMLO  
+merged_r3_data$v2paid[merged_r3_data$q99 == 301] <- 2315  #RENAMO
+merged_r3_data$v2paid[merged_r3_data$q99 == 302] <- NA #PIMO
+merged_r3_data$v2paid[merged_r3_data$q99 == 303] <- NA  #PDD
+
+
+#Party Matching Close
+
+merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 300] <- 2314 #FREMLO   
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 301] <- 2315  #RENAMO
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 302] <- NA #
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 303] <- NA  #
+
+##                Namibia
+#Interview Feb-Mar 2006
+#Voter Winner and Loser 
+merged_r3_data$winner[merged_r3_data$q99 == 320] <- 1
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
+merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
+merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
+
+#Non Voter 
+merged_r3_data$didnt_vote <- 0
+merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
+
+#Loser
+merged_r3_data$loser <- 1 
+merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 11] 
+
+#Close Party Winner/Loser 
+merged_r3_data$winner_party <- 0 
+merged_r3_data$winner_party[merged_r3_data$q86 == 320] <- 1 
+merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
+merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
+
+merged_r3_data$loser_party <- 1 
+merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
+
+merged_r3_data$nonpartisan <- 0
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 0] <- 1
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 8] <- NA
+merged_r3_data$nonpartisan[merged_r3_data$q85 == 9] <- NA
+
+#merged_r3_data$didnt_party <- 0
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
+#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
+
+#Party Matching Vote
+merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
+merged_r3_data$v2paid[merged_r3_data$q99 == 320] <- 2331 #SWAPO  
+merged_r3_data$v2paid[merged_r3_data$q99 == 321] <- 2356  #DTA
+merged_r3_data$v2paid[merged_r3_data$q99 == 322] <- 2358 #CoD
+merged_r3_data$v2paid[merged_r3_data$q99 == 323] <- 2355 #UDF
+merged_r3_data$v2paid[merged_r3_data$q99 == 330] <- 6600  #UNSWP
+
+
+#Party Matching Close
+
+merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 320] <- 2314 #FREMLO   
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 321] <- 2315  #RENAMO
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 322] <- 2358 #CoD
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 323] <- 2355 #UDF
+merged_r3_data$v2paid_close[merged_r3_data$q86 == 330] <- 6600  #UNSWP
 
 
 
@@ -2793,8 +3023,4 @@ merged_r3_data$v2paid_close[merged_r3_data$q86 == 270] <- 3734 #UDF
 
 
 
-
-
-
-#May-June 2005 interviews
 
