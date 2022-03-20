@@ -2348,7 +2348,7 @@ merged_r3_data$ethnic_id[merged_r3_data$q79 == 124] <- 43402000
   merged_r3_data$winner_party[merged_r3_data$q86 == 126] <- 1 
   merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
   merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
-  
+
   merged_r3_data$didnt_party <- 0
   merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
   merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
@@ -3225,6 +3225,7 @@ merged_r3_data$loser_party[merged_r3_data$winner_party == 0 & merged_r3_data$did
 #INT DATE: JUN-JUL 08
 
 #Voter Winner and Loser 
+merged_r4_data$winner <- 0
 merged_r4_data$winner[merged_r4_data$Q97 == 100] <- 1 #FORCE Cauris was the party associated with BONI (Independent) in the 2007 Parlimentary Election.
 
 #Refused to and I don't know are dropped. They did not answer the question.
@@ -3244,8 +3245,13 @@ merged_r4_data$loser[merged_r4_data$winner == 0 & merged_r4_data$didnt_vote == 0
 merged_r4_data$winner_party <- 0 
 merged_r4_data$winner_party[merged_r4_data$Q86 == 100] <- 1 
 merged_r4_data$winner_party[merged_r4_data$Q86 == -1] <- NA 
-merged_r4_data$winner_party[merged_r4_data$Q86 == 997] <- NA 
+merged_r4_data$winner_party[merged_r4_data$Q86 == 997] <- 0 
+merged_r4_data$winner_party[merged_r4_data$Q86 == 995] <- NA 
 merged_r4_data$winner_party[merged_r4_data$Q86 == 998] <- NA 
+merged_r4_data$winner_party[merged_r4_data$Q86 == 999] <- NA 
+merged_r4_data$winner_party[merged_r4_data$Q85 == 9] <- NA 
+merged_r4_data$winner_party[merged_r4_data$Q85 == 8] <- NA 
+merged_r4_data$winner_party[merged_r4_data$Q85 == -1] <- NA 
 
 merged_r4_data$loser_party <- 1 
 merged_r4_data$loser_party[merged_r4_data$winner_party == 1] <- 0
@@ -3284,7 +3290,6 @@ merged_r4_data$v2paid[merged_r4_data$Q97 == 119] <- NA #
 merged_r4_data$v2paid[merged_r4_data$Q97 == 120] <- 120 #UNSP
 merged_r4_data$v2paid[merged_r4_data$Q97 == 121] <- 7060 #UPR
 merged_r4_data$v2paid[merged_r4_data$Q97 == 122] <- NA #UTD
-  
 
 #Party Matching Close
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == -1] <- NA 
@@ -3300,7 +3305,6 @@ merged_r4_data$v2paid_close[merged_r4_data$Q86 == 113] <- 4089 #FARD
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 114] <- 7061 #FE
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 120] <- 120 #UNSP
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 121] <- 7060 #UPR
-
 
 #BOTSWANA  
 #INT DATE: JUN-JUL 08
@@ -3863,7 +3867,7 @@ merged_r4_data$v2paid_close[merged_r4_data$Q86 == 824] <- 2334  #UNI
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 825] <- 2335  #UPND
 #merged_r4_data$v2paid_close[merged_r4_data$Q86 == 749] <- 3553  #TLP
 
-#                           Zambia 
+#                           Zimbabwe 
 #Interview May 09
 #Voter Winner and Loser 
 merged_r4_data$winner[merged_r4_data$Q97 == 861] <- 1 
@@ -3882,7 +3886,6 @@ merged_r4_data$v2paid[merged_r4_data$Q97 == 862] <- 3560 #MDC-M Name is acutally
 merged_r4_data$v2paid[merged_r4_data$Q97 == 863] <- NA #MKD
 merged_r4_data$v2paid[merged_r4_data$Q97 == 824] <- 5244  #ZAPU
 
-
 #Party Matching Close
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 860] <- 3559 #MDC-T
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 861] <- 3305 #ZANU-PF
@@ -3890,3 +3893,346 @@ merged_r4_data$v2paid_close[merged_r4_data$Q86 == 862] <- 3560 #MDC-M Name
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 863] <- NA #MKD
 merged_r4_data$v2paid_close[merged_r4_data$Q86 == 824] <- 5244  #ZAPU
 #merged_r4_data$v2paid_close[merged_r4_data$Q86 == 749] <- 3553  #TLP
+
+
+#____________________________________________________________________________________________
+#__________________________WAVE 5 AFRO AFRO5 ________________________________________
+#____________________________________________________________________________________________
+
+#Benin 2
+#int date: JUN-JUL/12
+
+merged_r5_data$winner <- 0
+merged_r5_data$winner[merged_r5_data$Q99 == 100] <- 1 #BDP
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r5_data$winner[merged_r5_data$Q99 == -1] <- NA
+merged_r5_data$winner[merged_r5_data$Q99 == 9998] <- NA 
+merged_r5_data$winner[merged_r5_data$Q99 == 9999] <- NA 
+
+#Non Voter 
+merged_r5_data$didnt_vote <- 0
+merged_r5_data$didnt_vote[merged_r5_data$Q99 == 997] <- 1
+
+#Loser
+merged_r5_data$loser <- 0 
+merged_r5_data$loser[merged_r5_data$winner == 0 & merged_r5_data$didnt_vote == 0 & merged_r5_data$COUNTRY == 1] <- 1
+
+#Close Party Winner/Loser 
+merged_r5_data$winner_party <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 100] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9997] <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9995] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9998] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9999] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 8] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+
+merged_r5_data$loser_party <- 1 
+merged_r5_data$loser_party[merged_r5_data$winner_party == 1] <- 0
+
+merged_r5_data$nonpartisan <- 0
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 9] <- NA
+
+merged_r5_data$didnt_party <- 0
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 9] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == -1] <- NA
+
+#Party Matching Vote
+merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
+merged_r5_data$v2paid[merged_r5_data$Q99 == 100] <- 2300 #FCBE
+merged_r5_data$v2paid[merged_r5_data$Q99 == 101] <- 6569  #UN
+merged_r5_data$v2paid[merged_r5_data$Q99 == 102] <- NA #ABT
+merged_r5_data$v2paid[merged_r5_data$Q99 == 103] <- NA #UPR
+merged_r5_data$v2paid[merged_r5_data$Q99 == 104] <- 7059 #7059
+
+#Party Matching Close
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 100] <- 2300 #FCBE
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 101] <- 6569  #UN
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 102] <- NA #ABT
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 103] <- NA #UPR
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 104] <- 7059 #7059
+
+#Botswana 2
+#int date: JUN-JUL/12
+
+merged_r5_data$winner <- 0
+merged_r5_data$winner[merged_r5_data$Q99 == 141] <- 1 #BDP
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r5_data$winner[merged_r5_data$Q99 == -1] <- NA
+merged_r5_data$winner[merged_r5_data$Q99 == 9998] <- NA 
+merged_r5_data$winner[merged_r5_data$Q99 == 9999] <- NA 
+
+#Non Voter 
+merged_r5_data$didnt_vote <- 0
+merged_r5_data$didnt_vote[merged_r5_data$Q99 == 997] <- 1
+
+#Loser
+merged_r5_data$loser <- 0 
+merged_r5_data$loser[merged_r5_data$winner == 0 & merged_r5_data$didnt_vote == 0 & merged_r5_data$COUNTRY == 2] <- 1
+
+#Close Party Winner/Loser 
+merged_r5_data$winner_party <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 141] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9997] <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9995] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9998] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9999] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 8] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+
+merged_r5_data$loser_party <- 1 
+merged_r5_data$loser_party[merged_r5_data$winner_party == 1] <- 0
+
+merged_r5_data$nonpartisan <- 0
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 9] <- NA
+
+merged_r5_data$didnt_party <- 0
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 9] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == -1] <- NA
+
+#Party Matching Vote
+merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
+merged_r5_data$v2paid[merged_r5_data$Q99 == 140] <- 2337 #BCP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 141] <- 2301  #BDP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 142] <- NA #BMD
+merged_r5_data$v2paid[merged_r5_data$Q99 == 143] <- 2336 #BNF
+merged_r5_data$v2paid[merged_r5_data$Q99 == 144] <- 3632 #BPP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 146] <- 4832  #Umbrella
+
+#Party Matching Close
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 140] <- 2337 #BCP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 141] <- 2301  #BDP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 142] <- NA #BMD
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 143] <- 2336 #BNF
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 144] <- 3632 #BPP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 146] <- 4832  #Umbrella
+
+#Burkina 3
+#int date: DEC/12
+
+merged_r5_data$winner <- 0
+merged_r5_data$winner[merged_r5_data$Q99 == 181] <- 1 #BDP
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r5_data$winner[merged_r5_data$Q99 == -1] <- NA
+merged_r5_data$winner[merged_r5_data$Q99 == 9998] <- NA 
+merged_r5_data$winner[merged_r5_data$Q99 == 9999] <- NA 
+
+#Non Voter 
+merged_r5_data$didnt_vote <- 0
+merged_r5_data$didnt_vote[merged_r5_data$Q99 == 997] <- 1
+
+#Loser
+merged_r5_data$loser <- 0 
+merged_r5_data$loser[merged_r5_data$winner == 0 & merged_r5_data$didnt_vote == 0 & merged_r5_data$COUNTRY == 3] <- 1
+
+#Close Party Winner/Loser 
+merged_r5_data$winner_party <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 181] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9997] <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9995] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9998] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9999] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 8] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+
+merged_r5_data$loser_party <- 1 
+merged_r5_data$loser_party[merged_r5_data$winner_party == 1] <- 0
+
+merged_r5_data$nonpartisan <- 0
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 9] <- NA
+
+merged_r5_data$didnt_party <- 0
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 9] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == -1] <- NA
+
+#Party Matching Vote
+merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
+merged_r5_data$v2paid[merged_r5_data$Q99 == 180] <- 4314 #ADF/RDA
+merged_r5_data$v2paid[merged_r5_data$Q99 == 181] <- 4313  #BDP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 182] <- NA #CFD
+merged_r5_data$v2paid[merged_r5_data$Q99 == 183] <- NA #AF
+merged_r5_data$v2paid[merged_r5_data$Q99 == 184] <- NA #PDP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 185] <- NA  #PAREN
+merged_r5_data$v2paid[merged_r5_data$Q99 == 186] <- NA  #PDS
+merged_r5_data$v2paid[merged_r5_data$Q99 == 187] <- NA  #UNDD
+merged_r5_data$v2paid[merged_r5_data$Q99 == 188] <- NA  #UNIR/PS
+merged_r5_data$v2paid[merged_r5_data$Q99 == 189] <- 4315  #UPC
+merged_r5_data$v2paid[merged_r5_data$Q99 == 191] <- 4317  #PDS/METBA 
+
+#Party Matching Close
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 180] <- 4314 #ADF/RDA
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 181] <- 4313  #BDP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 189] <- 4315  #UPC
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 191] <- 4317  #PDS/METBA 
+
+##Skip CAPE VERDE Because of Ethnic. 
+
+# Ghana 5
+#int date: MAY/12
+
+merged_r5_data$winner <- 0
+merged_r5_data$winner[merged_r5_data$Q99 == 261] <- 1 #NDC Looking at 2008 elections because 2012 election was held in Dec. 
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r5_data$winner[merged_r5_data$Q99 == -1] <- NA
+merged_r5_data$winner[merged_r5_data$Q99 == 9998] <- NA 
+merged_r5_data$winner[merged_r5_data$Q99 == 9999] <- NA 
+
+#Non Voter 
+merged_r5_data$didnt_vote <- 0
+merged_r5_data$didnt_vote[merged_r5_data$Q99 == 997] <- 1
+
+#Loser
+merged_r5_data$loser <- 0 
+merged_r5_data$loser[merged_r5_data$winner == 0 & merged_r5_data$didnt_vote == 0 & merged_r5_data$COUNTRY == 5] <- 1
+
+#Close Party Winner/Loser 
+merged_r5_data$winner_party <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 261] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9997] <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9995] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9998] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9999] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 8] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+
+merged_r5_data$loser_party <- 1 
+merged_r5_data$loser_party[merged_r5_data$winner_party == 1] <- 0
+
+merged_r5_data$nonpartisan <- 0
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 9] <- NA
+
+merged_r5_data$didnt_party <- 0
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 9] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == -1] <- NA
+
+#Party Matching Vote
+merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
+merged_r5_data$v2paid[merged_r5_data$Q99 == 260] <- 3660 #CPP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 261] <- 2311  #NDC
+merged_r5_data$v2paid[merged_r5_data$Q99 == 262] <- 4732 #NPP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 263] <- NA #PNC
+merged_r5_data$v2paid[merged_r5_data$Q99 == 264] <- NA #PPP
+
+#Party Matching Close
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 260] <- 3660 #CPP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 261] <- 2311  #NDC
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 262] <- 4732 #NPP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 263] <- NA #PNC
+
+#Kenya 6 
+#int date: NOV/11
+
+merged_r5_data$winner <- 0
+merged_r5_data$winner[merged_r5_data$Q99 == 302] <- 1 #NDC Looking at 2008 elections because 2012 election was held in Dec. 
+
+#Refused to and I don't know are dropped. They did not answer the question.
+merged_r5_data$winner[merged_r5_data$Q99 == -1] <- NA
+merged_r5_data$winner[merged_r5_data$Q99 == 9998] <- NA 
+merged_r5_data$winner[merged_r5_data$Q99 == 9999] <- NA 
+
+#Non Voter 
+merged_r5_data$didnt_vote <- 0
+merged_r5_data$didnt_vote[merged_r5_data$Q99 == 997] <- 1
+
+#Loser
+merged_r5_data$loser <- 0 
+merged_r5_data$loser[merged_r5_data$winner == 0 & merged_r5_data$didnt_vote == 0 & merged_r5_data$COUNTRY == 6] <- 1
+
+#Close Party Winner/Loser 
+merged_r5_data$winner_party <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 302] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9997] <- 0 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9995] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9998] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9999] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 9] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 8] <- NA 
+merged_r5_data$winner_party[merged_r5_data$Q89B == -1] <- NA 
+
+merged_r5_data$loser_party <- 1 
+merged_r5_data$loser_party[merged_r5_data$winner_party == 1] <- 0
+
+merged_r5_data$nonpartisan <- 0
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$nonpartisan[merged_r5_data$Q89A == 9] <- NA
+
+merged_r5_data$didnt_party <- 0
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 0] <- 1
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 8] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == 9] <- NA
+merged_r5_data$didnt_party[merged_r5_data$Q89A == -1] <- NA
+
+#Party Matching Vote
+merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
+merged_r5_data$v2paid[merged_r5_data$Q99 == 300] <- 2360 #ODM
+merged_r5_data$v2paid[merged_r5_data$Q99 == 301] <- 2360  #ODM
+merged_r5_data$v2paid[merged_r5_data$Q99 == 302] <- 2359 #PNU
+merged_r5_data$v2paid[merged_r5_data$Q99 == 303] <- 5834 #NARC
+merged_r5_data$v2paid[merged_r5_data$Q99 == 304] <- 7970 #NARK-K
+merged_r5_data$v2paid[merged_r5_data$Q99 == 305] <- 3860 #DP
+merged_r5_data$v2paid[merged_r5_data$Q99 == 306] <- 3863 #FORD-K
+merged_r5_data$v2paid[merged_r5_data$Q99 == 307] <- 7971 #FORD-P
+merged_r5_data$v2paid[merged_r5_data$Q99 == 308] <- 2316 #KANU
+merged_r5_data$v2paid[merged_r5_data$Q99 == 309] <- 7932 #NPK
+merged_r5_data$v2paid[merged_r5_data$Q99 == 313] <- 3858 #S
+merged_r5_data$v2paid[merged_r5_data$Q99 == 314] <- 4083 #KADU
+merged_r5_data$v2paid[merged_r5_data$Q99 == 315] <- NA #KADDU
+merged_r5_data$v2paid[merged_r5_data$Q99 == 316] <- NA #UDM
+merged_r5_data$v2paid[merged_r5_data$Q99 == 317] <- NA #NEw ford
+merged_r5_data$v2paid[merged_r5_data$Q99 == 318] <- NA #G&
+
+#Party Matching Close
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA 
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 300] <- 2360 #ODM
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 301] <- 2360  #ODM
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 302] <- 2359 #PNU
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 303] <- 5834 #NARC
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 304] <- 7970 #NARK-K
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 305] <- 3860 #DP
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 306] <- 3863 #FORD-K
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 307] <- 7971 #FORD-P
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 308] <- 2316 #KANU
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 309] <- 7932 #NPK
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 313] <- 3858 #S
+merged_r5_data$v2paid_close[merged_r5_data$Q89B == 314] <- 4083 #KADU
+
+
+
+
+
+
+
