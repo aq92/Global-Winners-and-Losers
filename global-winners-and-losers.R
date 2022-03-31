@@ -6298,64 +6298,424 @@ merged_r7_data$v2paid[merged_r7_data$Q99 == 909] <- NA #MR
 merged_r7_data$v2paid[merged_r7_data$Q99 == 910] <- NA #FPR
 merged_r7_data$v2paid[merged_r7_data$Q99 == 911] <- NA #Rezistans ek Alternativ 
 
-
 #Party Matching Close
 merged_r7_data$v2paid_close[merged_r7_data$Q90B == 900] <- 3798 #MSM
 merged_r7_data$v2paid_close[merged_r7_data$Q90B == 902] <- 3800 #PMSD
 merged_r7_data$v2paid_close[merged_r7_data$Q90B == 903] <- 2320 #LP
 merged_r7_data$v2paid_close[merged_r7_data$Q90B == 904] <- 2460 #MMM
 
-
 #19 Morocco 
 #May 18
+merged_r7_data$winner[merged_r7_data$Q99 == 1500] <- 1 #PJC 
+merged_r7_data$winner[merged_r7_data$Q99 == 1503] <- 1 #RNI 
+merged_r7_data$winner[merged_r7_data$Q99 == 1504] <- 1 #MP 
+merged_r7_data$winner[merged_r7_data$Q99 == 1506] <- 1 #UC 
+merged_r7_data$winner[merged_r7_data$Q99 == 1507] <- 1 #PPS 
+merged_r7_data$winner[merged_r7_data$Q99 == 1505] <- 1 #ussp 
 
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1500] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1503] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1504] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1506] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1507] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1505] <- 1 
 
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1500] <- 2479 #PJD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1501] <- 5325 #AMP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1502] <- 2482 #PI
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1503] <- 2480 #RNI
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1504] <- 2481 #MP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1505] <- 2324 #USSP 
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1506] <- 5323 #UC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1507] <- 6620  #PPS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1508] <- 5707 #MDS
 
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1500] <- 2479 #PJD
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1501] <- 5325 #AMP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1503] <- 2480 #RNI
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1504] <- 2481 #MP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1505] <- 2324 #USSP 
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1506] <- 5323 #UC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1507] <- 6620  #PPS
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1508] <- 5707 #MDS
 
 #20 Mozambique
 #6-9/18
+merged_r7_data$winner[merged_r7_data$Q99 == 540] <- 1 #FREMILO 
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 540] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 540] <- 2314 #FREMILO
+merged_r7_data$v2paid[merged_r7_data$Q99 == 541] <- 2315 #RENAMO
+merged_r7_data$v2paid[merged_r7_data$Q99 == 542] <- 3813 #MDM
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 540] <- 2314 #FREMILO
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 541] <- 2315 #RENAMO
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 542] <- 3813 #MDM
 
 #21 Namibia 
 #11-12/17
+merged_r7_data$winner[merged_r7_data$Q99 == 592] <- 1 #SWAPO 
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 592] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 580] <- NA #APP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 582] <- 2315 #COD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 583] <- NA #DPN
+merged_r7_data$v2paid[merged_r7_data$Q99 == 584] <- 2356 #DTA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 585] <- NA #MAG
+merged_r7_data$v2paid[merged_r7_data$Q99 == 586] <- NA #NDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 588] <- NA #NUDO
+merged_r7_data$v2paid[merged_r7_data$Q99 == 589] <- 4895 #RDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 590] <- NA #RP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 591] <- NA #SWANU
+merged_r7_data$v2paid[merged_r7_data$Q99 == 592] <- 2331 #SWAPO
+merged_r7_data$v2paid[merged_r7_data$Q99 == 594] <- 2335 #UDF
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 582] <- 2315 #COD
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 584] <- 2356 #DTA
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 589] <- 4895 #RDP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 592] <- 2331 #SWAPO
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 594] <- 2335 #UDF
 
 #22 Niger
 #4/18
+merged_r7_data$winner[merged_r7_data$Q99 == 1104] <- 1 #PNDS 
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1104] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1100] <- 2351 #ANDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1101] <- 2352 #CDS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1102] <- 2350 #MNSD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1103] <- 2356 #DTA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1104] <- 2325 #PNDS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1105] <- NA #PNA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1106] <- 5804 #RDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1107] <- NA #UDPS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1109] <- NA #MPN
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1110] <- NA #MPR
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1111] <- NA #I
+
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1100] <- 2351 #ANDP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1101] <- 2352 #CDS
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1102] <- 2350 #MNSD
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1103] <- 2356 #DTA
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1104] <- 2325 #PNDS
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1106] <- 5804 #RDP
 
 #23 Nigeria
 #4-5/17
+merged_r7_data$winner[merged_r7_data$Q99 == 621] <- 1 #APC 
 
-#24 São Tomé and Príncipe
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 621] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 620] <- NA #ACD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 621] <- 5538 #APC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 622] <- 4116 #AD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 623] <- NA #ADC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 624] <- 2313 #ANPP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 625] <- NA #APGA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 626] <- NA #APP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 628] <- 5539 #CPC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 630] <- NA #DA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 633] <- NA #FDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 634] <- NA #LP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 637] <- NA #ND
+merged_r7_data$v2paid[merged_r7_data$Q99 == 638] <- 2354 #PDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 640] <- NA #PPP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 643] <- NA #SDMP
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 621] <- 5538 #APC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 622] <- 4116 #AD
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 624] <- 2313 #ANPP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 628] <- 5539 #CPC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 638] <- 2354 #PDP
+
+#24 São Tomé and Príncipe SKIP
 #6-7/18
 
 #25 Senegal 
 #12/17
+merged_r7_data$winner[merged_r7_data$Q99 == 663] <- 1 #APR 
+merged_r7_data$winner[merged_r7_data$Q99 == 679] <- 1 #Benno Bokk Yakaar 
+
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 663] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 679] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 660] <- 2329 #PDS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 661] <- 2380 #SP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 662] <- 2379 #AFP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 663] <- 5766 #APR
+merged_r7_data$v2paid[merged_r7_data$Q99 == 664] <- NA #REWMI
+merged_r7_data$v2paid[merged_r7_data$Q99 == 665] <- 6462 #URP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 669] <- NA #JEFJEL
+merged_r7_data$v2paid[merged_r7_data$Q99 == 670] <- NA #LD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 671] <- NA #UCS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 672] <- NA #GP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 674] <- NA #BN
+merged_r7_data$v2paid[merged_r7_data$Q99 == 677] <- NA #ACT
+merged_r7_data$v2paid[merged_r7_data$Q99 == 678] <- NA #PAStef
+merged_r7_data$v2paid[merged_r7_data$Q99 == 679] <- 5766 #BBY
+merged_r7_data$v2paid[merged_r7_data$Q99 == 684] <- NA #PVD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 685] <- NA #PUR
+merged_r7_data$v2paid[merged_r7_data$Q99 == 685] <- 93588 #MANKO TaXawou
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 660] <- 2329 #PDS
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 661] <- 2380 #SP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 662] <- 2379 #AFP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 663] <- 5766 #APR
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 665] <- 6462 #URP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 679] <- 5766 #BBY
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 685] <- 93588 #MANKO TaXawou
 
 #26 Sierra Leone
-#7/18
+#7/18 #Election year The new president (Bio) won the second round 3/31 assumed office 4/4
+merged_r7_data$winner[merged_r7_data$Q99 == 930] <- 1 #SLPP 
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 930] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 930] <- 4047 #SLPP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 931] <- 4045 #APC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 932] <- NA #PMDC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 933] <- NA #NDA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 935] <- NA #ADP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 936] <- 7649 #C4C
+merged_r7_data$v2paid[merged_r7_data$Q99 == 937] <- 7651 #NGC
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 930] <- 4047 #SLPP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 931] <- 4045 #APC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 936] <- 7649 #C4C
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 937] <- 7651 #NGC
 
 #27 South Africa
 #7-9/18
+merged_r7_data$winner[merged_r7_data$Q99 == 702] <- 1 #ANC 
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 702] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 700] <- NA #ACDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 702] <- 1219 #ANC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 704] <- 4546 #COPE
+merged_r7_data$v2paid[merged_r7_data$Q99 == 705] <- 1038 #DA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 706] <- NA #VF
+merged_r7_data$v2paid[merged_r7_data$Q99 == 707] <- NA #ID
+merged_r7_data$v2paid[merged_r7_data$Q99 == 708] <- 1630 #IFP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 709] <- NA #MF
+merged_r7_data$v2paid[merged_r7_data$Q99 == 711] <- 5731 #NNP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 712] <- NA #PAC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 713] <- NA #UCDP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 714] <- NA #UDM
+merged_r7_data$v2paid[merged_r7_data$Q99 == 716] <- 4548 #EFF
+merged_r7_data$v2paid[merged_r7_data$Q99 == 721] <- NA #FNLA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 726] <- NA #NFP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 728] <- NA #PA
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 702] <- 1219 #ANC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 704] <- 4546 #COPE
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 705] <- 1038 #DA
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 708] <- 1630 #IFP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 711] <- 5731 #NNP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 716] <- 4548 #EFF
 
 #28 Sudan
 #7-8/18
+merged_r7_data$winner[merged_r7_data$Q99 == 1540] <- 1 #NC 
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1540] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1540] <- 5496 #NC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1541] <- 4756 #UMMA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1542] <- 4754 #DUP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1543] <- NA #PCP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1544] <- NA #CP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1545] <- NA #SCP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1546] <- NA #NM
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1540] <- 5496 #NC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1541] <- 4756 #UMMA
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1542] <- 4754 #DUP
 
 #29 Tanzania
 #4-6/17
+merged_r7_data$winner[merged_r7_data$Q99 == 740] <- 1 #CCM
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 740] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 740] <- 2328 #CCM
+merged_r7_data$v2paid[merged_r7_data$Q99 == 741] <- 2345 #CUF v CCW
+merged_r7_data$v2paid[merged_r7_data$Q99 == 742] <- 2344 #CHADEMA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 744] <- 3276 #NCCR-M
+merged_r7_data$v2paid[merged_r7_data$Q99 == 754] <- NA #DP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 757] <- NA #SAU
+merged_r7_data$v2paid[merged_r7_data$Q99 == 758] <- NA #ACT
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 740] <- 2328 #CCM
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 741] <- 2345 #CUF v CCW
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 742] <- 2344 #CHADEMA
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 744] <- 3276 #NCCR-M
 
 #30 Togo
 #11/17
+merged_r7_data$winner[merged_r7_data$Q99 == 1140] <- 1 #UNIR
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1140] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1140] <- 4129 #UNIR
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1141] <- 4130 #UFC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1142] <- 5767 #ANC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1143] <- 4133 #CAR
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1144] <- NA #CDPA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1145] <- NA #PRR
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1146] <- NA #OBUTS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1147] <- NA #UDPS
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1148] <- 8071 #ADDI
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1149] <- 4132 #CST
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1150] <- NA #Arc
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1151] <- NA #PNP
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1140] <- 4129 #UNIR
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1141] <- 4130 #UFC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1142] <- 5767 #ANC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1143] <- 4133 #CAR
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1148] <- 8071 #ADDI
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1149] <- 4132 #CST
 
 #31 Tunisia
+#https://www.aljazeera.com/news/2015/2/4/tunisia-pm-essid-announces-unity-government
 #3-5/18
+merged_r7_data$winner[merged_r7_data$Q99 == 1580] <- 1 #Nidaa
+merged_r7_data$winner[merged_r7_data$Q99 == 1582] <- 1 #UPL V FPU
+merged_r7_data$winner[merged_r7_data$Q99 == 1584] <- 1 #Afek
+merged_r7_data$winner[merged_r7_data$Q99 == 1581] <- 1 #Ennahdha
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1580] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1582] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1584] <- 1 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 1581] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1580] <- 4530 #Nidda
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1581] <- 5832 #Ennahdha
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1582] <- NA #FREE Pat
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1583] <- NA #PF
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1584] <- NA #Afek
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1585] <- NA #Hirak
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1586] <- NA #I
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1587] <- NA #PM
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1588] <- 7917 #TD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 1589] <- NA #mashroo3
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1580] <- 4530 #Nidda
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1581] <- 5832 #Ennahdha
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 1588] <- 7917 #TD
 
 #32 Uganda
 #12-1/17
+merged_r7_data$winner[merged_r7_data$Q99 == 780] <- 1 #NRM
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 780] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 780] <- 4523 #NRM
+merged_r7_data$v2paid[merged_r7_data$Q99 == 781] <- 5389 #FDC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 782] <- 4525 #DP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 784] <- 4524 #UPC
+merged_r7_data$v2paid[merged_r7_data$Q99 == 788] <- NA #JEEMA
+merged_r7_data$v2paid[merged_r7_data$Q99 == 790] <- NA #Forward
+merged_r7_data$v2paid[merged_r7_data$Q99 == 791] <- NA #Farmer's party
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 780] <- 4523 #NRM
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 781] <- 5389 #FDC
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 782] <- 4525 #DP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 784] <- 4524 #UPC
 
 #33 Zambia 
 #4/17
+merged_r7_data$winner[merged_r7_data$Q99 == 826] <- 1 #NRM
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 826] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 821] <- 2332 #FDD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 823] <- 2333 #MMD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 825] <- NA #NAREP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 826] <- 2302 #PF
+merged_r7_data$v2paid[merged_r7_data$Q99 == 827] <- 2334 #UNIP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 828] <- 2335 #UPND
+merged_r7_data$v2paid[merged_r7_data$Q99 == 830] <- NA #PP
+merged_r7_data$v2paid[merged_r7_data$Q99 == 831] <- NA #Green Party
+merged_r7_data$v2paid[merged_r7_data$Q99 == 832] <- NA #UPP
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 821] <- 2332 #FDD
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 823] <- 2333 #MMD
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 826] <- 2302 #PF
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 827] <- 2334 #UNIP
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 828] <- 2335 #UPND
 
 #34 Zimbabwe 
 #1-2/17
+merged_r7_data$winner[merged_r7_data$Q99 == 861] <- 1 #
+
+#Close Party Winner/Loser 
+merged_r7_data$winner_party[merged_r7_data$Q90B == 861] <- 1 
+
+#Party Matching Vote
+merged_r7_data$v2paid[merged_r7_data$Q99 == 860] <- 3559 #MDC-T
+merged_r7_data$v2paid[merged_r7_data$Q99 == 861] <- 3305 #ZANU-PF
+merged_r7_data$v2paid[merged_r7_data$Q99 == 862] <- 3560 #MDC-Mutambara he is Ncube
+merged_r7_data$v2paid[merged_r7_data$Q99 == 863] <- NA #MKD
+merged_r7_data$v2paid[merged_r7_data$Q99 == 864] <- 6615 #ZAPU-D
+merged_r7_data$v2paid[merged_r7_data$Q99 == 866] <- 7986 #MDC R
+merged_r7_data$v2paid[merged_r7_data$Q99 == 867] <- 7988 #ZPF
+
+#Party Matching Close
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 860] <- 3559 #MDC-T
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 861] <- 3305 #ZANU-PF
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 862] <- 3560 #MDC-Mutambara he is Ncube
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 864] <- 6615 #ZAPU-D
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 866] <- 7986 #MDC R
+merged_r7_data$v2paid_close[merged_r7_data$Q90B == 867] <- 7988 #ZPF
 
 
 
