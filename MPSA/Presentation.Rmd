@@ -1,0 +1,195 @@
+---
+title: "Party Ethnicization, Partisan Affect, and Politial Trust"
+author: "Ahmad S. Qabazard"
+date: "4/8/2022"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Research Questions: 
+
+Does ethnic voting influence the winner-loser gap in political trust?
+
+## Ethnic Voting and Democracy:
+
+- Reduces the quality of democracy by increasing the winner-take-all character of elections (Houle 2018).  
+-- Argument focuses on elite behavior.  
+
+- Dowd and Michael (2007) find consistent effects on alternative quality of democracy measure.  
+-- Findings also show that ethnic voting lowers trust in government. 
+
+## Political Trust
+
+- Trust is the likelihood that institutions or their agents will produce preferred outcomes (Gamson 1958).
+- Considered a diffuse form of support (Easton 1975; Van der Meer and Zmerli 2017). 
+- Winner-Loser Status determines levels of support and this shows both cognitive and affective dimensions in trust judgments (Anderson and Guillory 1997).  
+--Undermines democratic accountability.   
+--Threatens democratic stability. 
+
+## Ethnic Voting Increases Winner-Loser Gap in Political Trust
+
+- Undermines the importance of cross-cutting cleavages (Lipset and Rokkan 1967).  
+- Similar to winner-loser gap in trust, ethnic voting undermines democratic accountability (Carlson 2015). 
+- Preferred outcomes (crucial for trust judgements) can be influenced by patronage distribution. Extending the winner-take-all character to individuals.   
+
+## Congnitive Appraisal and Emotions 
+
+- Lazarus and Folkman (1984).  
+- Adopted to explain the role of emotions in literature on radical American partisanship (Mason 2016).  
+- Allows for understanding the affective dimension of trust judgments.  
+- Losing increases stress appraisal and, if stress causing object is identified, theory expects the production of anger as an emptional response.
+
+## Hypotheses 
+
+- H1: As party ethnicization increases, losers are less likely to trust political institutions compared to winners.   
+
+- H2: As party ethnicization increases, individuals are expected to exhibit higher levels of affective polarization.  
+
+## Data and Methods: 
+
+- Individual level:  
+-- H1: Afrobarometer (Round 2 & 3).
+-- H2: CSES (Two Waves)
+
+- Ordinary Least Squares (OLS) Model with random effects.  Individuals nested in country-waves. 
+
+## Dependent Variables:
+
+- H1 Political Trust: Index of Trust in Particular Institutions.  
+-- President, Parliament, Courts, Electoral Institutions, and Police.  
+- H2 Affective Polarization: Wagner (2020)'s Weighted Affective Polarization.  
+-- Spread of party like-dislike scores using CSES items.  
+
+## Independent Variable: 
+
+- Huber (2012) measure of ethnicization.  
+-- Uses surveys to determine cohesion of ethnic group voting behavior.  
+-- Fearon (2003)'s list ethnic groups.  
+-- Can be party-based or ethnic group based.   
+-- Fractionalization or Polarization.  
+
+- Loser Status:  
+-- Determined by party affiliation in Afrobarometer.  
+-- Use voting decision for CSES data.  
+
+## Results H1: 
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+
+library(dotwhisker)
+library(ggplot2)
+library(dplyr)
+
+
+my_data <- readRDS("total.rds")
+
+
+
+library(lme4)
+modela <- lmer(pol_trust ~ loser_party + nonpartisan + PVP + PVP*loser_party +
+                education + employment + female + age + income + years_since_election + 
+                ELF_ethnic + lngdp + polity2 + pr + lndm + country_isolation +
+                (1 | country_wave), data=my_data)
+
+model2a <- lmer(pol_trust ~ loser_party + nonpartisan + PVF + PVF*loser_party +
+                education + employment + female + age + income + years_since_election + 
+                ELF_ethnic + lngdp + polity2 + pr + lndm + country_isolation +
+                (1 | country_wave), data=my_data)
+Figure_1 <- dwplot(list(modela, model2a),
+                   vline = geom_vline(xintercept = 0, colour = "grey60", linetype = 2)) %>% # plot line at zero _behind_ coefs
+  relabel_predictors(c(loser_party = "Loser", 
+                       nonpartisan = "Non-Partisan", 
+                       PVP = "Party Ethnicization-P", 
+                       PVF ="Party Ethnicization-F",
+                       education = "Education",
+                       employment = "Employed", 
+                       female = "Female", 
+                       age = "Age",
+                       income = "Income",
+                       years_since_election = "Years Since Election",
+                       ELF_ethnic = "ELF", 
+                       lngdp = "GDP log",
+                       polity2 = "Polity",
+                       pr = "PR",
+                       lndm = "District Magnitude",
+                       country_isolation = "Geographic Isolation" )) +
+  theme_bw() + xlab("Coefficient Estimate") + ylab("") +
+  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
+  ggtitle("Figure 1: Predicting Political Trust") +
+  theme(plot.title = element_text(face="bold"),
+        legend.position = c(0.007, 0.01),
+        legend.justification = c(0, 0), 
+        legend.background = element_rect(colour="grey80"),
+        legend.title = element_blank() + 
+          scale_color_grey(start = .3, end = .7,
+                           name = "Models",
+                           breaks = c(0,1),
+                           labels = c("Polarization Model", "Fractionalization Model")))
+
+
+
+Figure_1
+```
+
+## Results H2:  
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+
+my_data2 <- readRDS("cses_imd.rds")
+
+
+
+model3 <- lmer(affpolwgt ~ Loser + PVP + nonpartisan +
+                Education + employment + Female + Age + Income +
+                ELF_ethnic + lngdp + polity2 + pr + lndm + country_isolation +
+                (1 | Country_year), data=my_data2)
+
+model4 <- lmer(affpolwgt ~ Loser + PVF + nonpartisan +
+                 Education + employment + Female + Age + Income + 
+                 ELF_ethnic + lngdp + polity2 + pr + lndm + country_isolation +
+                 (1 | Country_year), data=my_data2)
+
+Figure_2 <- dwplot(list(model3, model4),
+                   vline = geom_vline(xintercept = 0, colour = "grey60", linetype = 2)) %>% # plot line at zero _behind_ coefs
+  relabel_predictors(c(Loser= "Loser", 
+                       nonpartisan = "Non-Partisan", 
+                       PVP = "Party Ethnicization-P", 
+                       PVF ="Party Ethnicization-F",
+                       Education = "Education",
+                       employment = "Employed", 
+                       Female = "Female", 
+                       Age = "Age",
+                       Income = "Income",
+                       ELF_ethnic = "ELF", 
+                       lngdp = "GDP log",
+                       polity2 = "Polity",
+                       pr = "PR",
+                       lndm = "District Magnitude",
+                       country_isolation = "Geographic Isolation" )) +
+  theme_bw() + xlab("Coefficient Estimate") + ylab("") +
+  geom_vline(xintercept = 0, colour = "grey60", linetype = 2) +
+  ggtitle("Figure 2: Predicting Affective Polarization") +
+  theme(plot.title = element_text(face="bold"),
+        legend.position = c(0.007, 0.01),
+        legend.justification = c(0, 0), 
+        legend.background = element_rect(colour="grey80"),
+        legend.title = element_blank() + 
+          scale_color_grey(start = .3, end = .7,
+                           name = "Models",
+                           breaks = c(0,1),
+                           labels = c("Polarization Model", "Fractionalization Model")))
+
+Figure_2
+```
+
+```{r}
+library(car)
+
+vif(model3)
+
+
+```
+
