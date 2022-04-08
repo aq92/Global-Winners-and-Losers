@@ -41,7 +41,11 @@ Does ethnic voting influence the winner-loser gap in political trust?
 
 - Undermines the importance of cross-cutting cleavages (Lipset and Rokkan 1967).  
 - Similar to winner-loser gap in trust, ethnic voting undermines democratic accountability (Carlson 2015). 
-- Preferred outcomes (crucial for trust judgements) can be influenced by patronage distribution. Extending the winner-take-all character to individuals.   
+- Preferred outcomes (crucial for trust judgements) can be influenced by patronage distribution. Extending the winner-take-all character to individuals. 
+
+## Hypothesis 1
+
+- As party ethnicization increases, losers are less likely to trust political institutions compared to winners.  
 
 ## Congnitive Appraisal and Emotions 
 
@@ -52,11 +56,9 @@ Does ethnic voting influence the winner-loser gap in political trust?
     -- Emphasis on losing (Anderson et al. 2005).  
     -- What determines the direction of emotional responses?  
 
-## Hypotheses 
+## Hypothesis 2
 
-- H1: As party ethnicization increases, losers are less likely to trust political institutions compared to winners.   
-
-- H2: As party ethnicization increases, individuals are expected to exhibit higher levels of affective polarization.  
+- As party ethnicization increases, individuals are expected to exhibit higher levels of affective polarization.  
 
 ## Data and Methods: 
 
