@@ -47,7 +47,7 @@ Does ethnic voting influence the winner-loser gap in political trust?
 
 - As party ethnicization increases, losers are less likely to trust political institutions compared to winners.  
 
-## Congnitive Appraisal and Emotions 
+## Cognitive Appraisal and Emotions 
 
 - Lazarus and Folkman (1984).  
 - Adopted to explain the role of emotions in literature on American partisanship (Mason 2016).  
@@ -75,7 +75,7 @@ Does ethnic voting influence the winner-loser gap in political trust?
 - H2 Affective polarization: Wagner (2020)'s Weighted Affective Polarization (WAP).  
 -- Spread of party like-dislike scores using CSES items.  
 
-## Independent Variable: 
+## Independent Variables: 
 
 - Huber (2012) measure of ethnicization.  
 -- Uses surveys to determine cohesion of ethnic group voting behavior.  
