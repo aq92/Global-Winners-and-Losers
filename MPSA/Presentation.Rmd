@@ -49,8 +49,8 @@ Does ethnic voting influence the winner-loser gap in political trust?
 - Adopted to explain the role of emotions in literature on American partisanship (Mason 2016).  
 - Allows for understanding the affective dimension of trust judgments.  
 - Losing increases stress appraisal and, if stress causing object is identified, theory expects the production of anger as an emotional response.  
-    -- Emphasis on losing (Anderson et al. 2005). 
-    -- What determines the direction of emotional responses? 
+    -- Emphasis on losing (Anderson et al. 2005).  
+    -- What determines the direction of emotional responses?  
 
 ## Hypotheses 
 
