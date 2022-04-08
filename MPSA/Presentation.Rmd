@@ -13,6 +13,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Does ethnic voting influence the winner-loser gap in political trust?
 
+## ELF and Democracy
+
+- Previous work tends to use Ethno-Linguistic Fractionalization (ELF) to understand the effects of politicized ethnicity on democracy and development (Weber et al. 2016).  
+
+- Findings on the relationship between ELF and democracy are mixed (See Gerring et al. 2016).  
+
+- Ethnicization of party support as a better measure of politicized ethnicity (Huber 2012).  
+
 ## Ethnic Voting and Democracy:
 
 - Reduces the quality of democracy by increasing the winner-take-all character of elections (Houle 2018).  
@@ -25,7 +33,7 @@ Does ethnic voting influence the winner-loser gap in political trust?
 
 - Trust is the likelihood that institutions or their agents will produce preferred outcomes (Gamson 1958).
 - Considered a diffuse form of support (Easton 1975; Van der Meer and Zmerli 2017). 
-- Winner-Loser Status determines levels of support and this shows both cognitive and affective dimensions in trust judgments (Anderson and Guillory 1997).  
+- Winner-loser status determines levels of support and this shows both cognitive and affective dimensions in trust judgments (Anderson and Guillory 1997).  
 --Undermines democratic accountability.   
 --Threatens democratic stability. 
 
@@ -38,9 +46,11 @@ Does ethnic voting influence the winner-loser gap in political trust?
 ## Congnitive Appraisal and Emotions 
 
 - Lazarus and Folkman (1984).  
-- Adopted to explain the role of emotions in literature on radical American partisanship (Mason 2016).  
+- Adopted to explain the role of emotions in literature on American partisanship (Mason 2016).  
 - Allows for understanding the affective dimension of trust judgments.  
-- Losing increases stress appraisal and, if stress causing object is identified, theory expects the production of anger as an emptional response.
+- Losing increases stress appraisal and, if stress causing object is identified, theory expects the production of anger as an emotional response.  
+    -- Emphasis on losing (Anderson et al. 2005). 
+    -- What determines the direction of emotional responses? 
 
 ## Hypotheses 
 
@@ -51,16 +61,16 @@ Does ethnic voting influence the winner-loser gap in political trust?
 ## Data and Methods: 
 
 - Individual level:  
--- H1: Afrobarometer (Round 2 & 3).
+-- H1: Afrobarometer (Round 2 & 3).  
 -- H2: CSES (Two Waves)
 
-- Ordinary Least Squares (OLS) Model with random effects.  Individuals nested in country-waves. 
+- Ordinary Least Squares (OLS) model with random effects.  Individuals nested in country-waves. 
 
 ## Dependent Variables:
 
-- H1 Political Trust: Index of Trust in Particular Institutions.  
+- H1 Political trust: Index of trust in particular institutions.  
 -- President, Parliament, Courts, Electoral Institutions, and Police.  
-- H2 Affective Polarization: Wagner (2020)'s Weighted Affective Polarization.  
+- H2 Affective polarization: Wagner (2020)'s Weighted Affective Polarization (WAP).  
 -- Spread of party like-dislike scores using CSES items.  
 
 ## Independent Variable: 
@@ -185,11 +195,18 @@ Figure_2 <- dwplot(list(model3, model4),
 Figure_2
 ```
 
-```{r}
-library(car)
+## Future Direction for Project:
 
-vif(model3)
+- Examining the role of ethnic salience and sorting as conditioning factors.  
+-- Requires expanding coverage of ethnicization measures.  
+
+- Creating an ethnic sorting measure that incorporates (Individual-level ethnic salience, party dependence on ethnic groups as supporters (V-Party), and cohesion of the ethnic group).  
+
+## Thank you
+
+- Looking forward to any questions or suggestions
 
 
-```
+
+ 
 
