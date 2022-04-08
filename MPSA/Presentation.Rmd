@@ -1,5 +1,5 @@
 ---
-title: "Party Ethnicization, Partisan Affect, and Politial Trust"
+title: "Party Ethnicization, Partisan Affect, and Political Trust"
 author: "Ahmad S. Qabazard"
 date: "4/8/2022"
 output: beamer_presentation
