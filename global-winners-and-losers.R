@@ -1,5 +1,5 @@
 
-#Merge Afrobarometer
+#Merge Afrobarometer TEST
 
 library(haven)
 merged_r1_data <- read_sav("merged_r1_data.sav")
