@@ -2358,3 +2358,409 @@ WVS$v2paid[WVS$E179WVS == 716034] <- NA #DOP
 
 WVS$vparty_year[WVS$S025 == 7162020] <- 2018 #Adjust Country-Year 
 
+#Ukraine 2011
+WVS$numparties[WVS$S025 == 8042011] <- 7
+WVS$numgroup[WVS$S025 == 8042011] <- 2
+WVS$groupsize1[WVS$S025 == 8042011] <- .8578879
+WVS$groupsize2[WVS$S025 == 8042011] <- .1421121
+#WVS$groupsize3[WVS$S025 == 8042011] <- .2246914
+#WVS$groupsize4[WVS$S025 == 8042011] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8042011] <- 
+#WVS$groupsize6[WVS$S025 == 8042011] <- 
+WVS$VF[WVS$S025 == 8042011] <- .0657448
+WVS$VP[WVS$S025 == 8042011] <- .1314895
+WVS$PVF[WVS$S025 == 8042011] <- .1144539
+WVS$PVP[WVS$S025 == 8042011] <- .0877426
+
+WVS$ethnic_id[WVS$S025 == 8042011 & WVS$X051 == 804001] <- 36901000 #Ukraine
+WVS$ethnic_id[WVS$S025 == 8042011 & WVS$X051 == 804002] <- 36902000 #Russian
+
+WVS$to[WVS$S025 == 8042011] <- 2014
+
+WVS$winner[WVS$S025 == 8042011 & WVS$E179WVS== 804053] <- 1 #Party of Regions
+WVS$winner[WVS$S025 == 8042011 & WVS$E179WVS== 804006] <- 1 #CP
+
+
+WVS$proximity[WVS$S025 == 8042011] <- 1 #2011-2010
+WVS$winning_party_share[WVS$S025 == 8042011] <- .4895
+WVS$second_party_share[WVS$S025 == 8042011] <- .4547 #https://www.cvk.gov.ua/pls/vp2010/WP0011.html
+
+#Ukraine 2020
+WVS$numparties[WVS$S025 == 8042020] <- 11
+WVS$numgroup[WVS$S025 == 8042020] <- 2
+WVS$groupsize1[WVS$S025 == 8042020] <- .9591195
+WVS$groupsize2[WVS$S025 == 8042020] <- .0408805
+#WVS$groupsize3[WVS$S025 == 8042020] <- .2246914
+#WVS$groupsize4[WVS$S025 == 8042020] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8042020] <- 
+#WVS$groupsize6[WVS$S025 == 8042020] <- 
+WVS$VF[WVS$S025 == 8042020] <- .0249823
+WVS$VP[WVS$S025 == 8042020] <- .0499645
+WVS$PVF[WVS$S025 == 8042020] <- .0454986
+WVS$PVP[WVS$S025 == 8042020] <- .029336
+
+WVS$ethnic_id[WVS$S025 == 8042020 & WVS$X051 == 804001] <- 36901000 #Ukraine
+WVS$ethnic_id[WVS$S025 == 8042020 & WVS$X051 == 804002] <- 36902000 #Russian
+
+WVS$to[WVS$S025 == 8042020] <- 2021
+
+WVS$winner[WVS$S025 == 8042020 & WVS$E179WVS== 804218] <- 1 #Servant of the People
+
+
+WVS$proximity[WVS$S025 == 8042020] <- 1 #2020-2019
+WVS$winning_party_share[WVS$S025 == 8042020] <- .7323
+WVS$second_party_share[WVS$S025 == 8042020] <- .2445 #https://www.statista.com/statistics/996813/ukraine-second-round-election-results/
+
+#Ukraine Parties
+WVS$v2paid[WVS$E179WVS == 804001] <- NA #APU
+WVS$v2paid[WVS$E179WVS == 804003] <- NA #PL
+WVS$v2paid[WVS$E179WVS == 804005] <- NA #DPU
+WVS$v2paid[WVS$E179WVS == 804006] <- 2220 #CP
+WVS$v2paid[WVS$E179WVS == 804007] <- NA #CUN
+WVS$v2paid[WVS$E179WVS == 804008] <- NA #LPU
+WVS$v2paid[WVS$E179WVS == 804009] <- 2206 #PDPU
+WVS$v2paid[WVS$E179WVS == 804013] <- 2226 #Green
+WVS$v2paid[WVS$E179WVS == 804015] <- NA #PSUU
+WVS$v2paid[WVS$E179WVS == 804016] <- 2210 #SDPU
+WVS$v2paid[WVS$E179WVS == 804017] <- NA #PSPU
+WVS$v2paid[WVS$E179WVS == 804018] <- NA #PPU
+WVS$v2paid[WVS$E179WVS == 804020] <- 2211 #SPU
+WVS$v2paid[WVS$E179WVS == 804022] <- NA #URP
+WVS$v2paid[WVS$E179WVS == 804023] <- NA #UCDP
+WVS$v2paid[WVS$E179WVS == 804024] <- NA #AUPM
+WVS$v2paid[WVS$E179WVS == 804025] <- NA #CCU
+WVS$v2paid[WVS$E179WVS == 804029] <- NA #CDP
+WVS$v2paid[WVS$E179WVS == 804031] <- NA #LDP
+WVS$v2paid[WVS$E179WVS == 804032] <- NA #UNM
+WVS$v2paid[WVS$E179WVS == 804034] <- NA #NUA
+WVS$v2paid[WVS$E179WVS == 804035] <- NA #IBR
+WVS$v2paid[WVS$E179WVS == 804036] <- NA #PER
+WVS$v2paid[WVS$E179WVS == 804043] <- NA #UCR
+WVS$v2paid[WVS$E179WVS == 804044] <- NA #UNA
+WVS$v2paid[WVS$E179WVS == 804046] <- NA #UBLP
+WVS$v2paid[WVS$E179WVS == 804048] <- NA #UPDP
+WVS$v2paid[WVS$E179WVS == 804052] <- 2231 #our
+WVS$v2paid[WVS$E179WVS == 804053] <- 2234 #regions
+WVS$v2paid[WVS$E179WVS == 804054] <- 2228 #YTB
+WVS$v2paid[WVS$E179WVS == 804061] <- NA #POBN
+WVS$v2paid[WVS$E179WVS == 804062] <- NA #ITSTIME
+WVS$v2paid[WVS$E179WVS == 804063] <- NA #UoC
+WVS$v2paid[WVS$E179WVS == 804069] <- NA #LB
+WVS$v2paid[WVS$E179WVS == 804071] <- 3267 #Au-s
+WVS$v2paid[WVS$E179WVS == 804101] <- 3266 #Au-f
+WVS$v2paid[WVS$E179WVS == 804105] <- 5825 #UDA
+WVS$v2paid[WVS$E179WVS == 804106] <- NA #SU
+WVS$v2paid[WVS$E179WVS == 804107] <- NA #FC
+WVS$v2paid[WVS$E179WVS == 804108] <- NA #CP
+WVS$v2paid[WVS$E179WVS == 804111] <- NA #RU
+WVS$v2paid[WVS$E179WVS == 804114] <- NA #PS
+WVS$v2paid[WVS$E179WVS == 804204] <- 7923 #V
+WVS$v2paid[WVS$E179WVS == 804206] <- NA #TtD
+WVS$v2paid[WVS$E179WVS == 804207] <- 4778 #ES
+WVS$v2paid[WVS$E179WVS == 804208] <- NA #I
+WVS$v2paid[WVS$E179WVS == 804209] <- NA #USR
+WVS$v2paid[WVS$E179WVS == 804210] <- 7922 #OPFL
+WVS$v2paid[WVS$E179WVS == 804211] <- 4779 #OB
+WVS$v2paid[WVS$E179WVS == 804212] <- NA #PS
+WVS$v2paid[WVS$E179WVS == 804213] <- NA #PU
+WVS$v2paid[WVS$E179WVS == 804214] <- 4774 #RPOL
+WVS$v2paid[WVS$E179WVS == 804215] <- NA #MNF
+WVS$v2paid[WVS$E179WVS == 804216] <- NA #SH
+WVS$v2paid[WVS$E179WVS == 804217] <- NA #PF
+WVS$v2paid[WVS$E179WVS == 804218] <- 7921 #SP
+WVS$v2paid[WVS$E179WVS == 804219] <- NA #USP
+
+WVS$vparty_year[WVS$S025 == 8042011] <- 2012 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8042020] <- 2019 #Adjust Country-Year 
+
+#United States 1995
+WVS$numparties[WVS$S025 == 8401995] <- 2
+WVS$numgroup[WVS$S025 == 8401995] <- 3
+WVS$groupsize1[WVS$S025 == 8401995] <- .821192
+WVS$groupsize2[WVS$S025 == 8401995] <- .1204094
+WVS$groupsize3[WVS$S025 == 8401995] <- .0583986
+#WVS$groupsize4[WVS$S025 == 8401995] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8401995] <- 
+#WVS$groupsize6[WVS$S025 == 8401995] <- 
+WVS$VF[WVS$S025 == 8401995] <- .0943601
+WVS$VP[WVS$S025 == 8401995] <- .1726306
+WVS$PVF[WVS$S025 == 8401995] <- .0946295
+WVS$PVP[WVS$S025 == 8401995] <- .1509041
+
+WVS$ethnic_id[WVS$S025 == 8401995 & WVS$X051 == 840001] <- 201000 #White
+WVS$ethnic_id[WVS$S025 == 8401995 & WVS$X051 == 840002] <- 203000 #Black
+WVS$ethnic_id[WVS$S025 == 8401995 & WVS$X051 == 840004] <- 202000 #Hispanic
+
+WVS$to[WVS$S025 == 8401995] <- 2008
+
+WVS$winner[WVS$S025 == 8401995 & WVS$E179WVS== 840002] <- 1 #dems
+
+WVS$proximity[WVS$S025 == 8401995] <- 3 #1995-1992
+WVS$winning_party_share[WVS$S025 == 8401995] <- .43
+WVS$second_party_share[WVS$S025 == 8401995] <- .374 #https://www.presidency.ucsb.edu/statistics/elections/1992
+
+#United States 1999
+WVS$numparties[WVS$S025 == 8401999] <- 3
+WVS$numgroup[WVS$S025 == 8401999] <- 3
+WVS$groupsize1[WVS$S025 == 8401999] <- .7340206
+WVS$groupsize2[WVS$S025 == 8401999] <- .1835051
+WVS$groupsize3[WVS$S025 == 8401999] <- .0824742
+#WVS$groupsize4[WVS$S025 == 8401999] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8401999] <- 
+#WVS$groupsize6[WVS$S025 == 8401999] <- 
+WVS$VF[WVS$S025 == 8401999] <- .1323132
+WVS$VP[WVS$S025 == 8401999] <- .2308999
+WVS$PVF[WVS$S025 == 8401999] <- .1250692
+WVS$PVP[WVS$S025 == 8401999] <- .2277255
+
+WVS$ethnic_id[WVS$S025 == 8401999 & WVS$X051 == 840001] <- 201000 #White
+WVS$ethnic_id[WVS$S025 == 8401999 & WVS$X051 == 840002] <- 203000 #Black
+WVS$ethnic_id[WVS$S025 == 8401999 & WVS$X051 == 840004] <- 202000 #Hispanic
+
+WVS$to[WVS$S025 == 8401999] <- 2008
+
+WVS$winner[WVS$S025 == 8401999 & WVS$E179WVS== 840002] <- 1 #dems
+
+WVS$proximity[WVS$S025 == 8401999] <- 2 #2001-1999
+WVS$winning_party_share[WVS$S025 == 8401999] <- .492
+WVS$second_party_share[WVS$S025 == 8401999] <- .407 #https://www.presidency.ucsb.edu/statistics/elections/1996
+
+#United States 2006
+WVS$numparties[WVS$S025 == 8402006] <- 4
+WVS$numgroup[WVS$S025 == 8402006] <- 3
+WVS$groupsize1[WVS$S025 == 8402006] <- .7729649
+WVS$groupsize2[WVS$S025 == 8402006] <- .1150112
+WVS$groupsize3[WVS$S025 == 8402006] <- .1120239
+#WVS$groupsize4[WVS$S025 == 8402006] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8402006] <- 
+#WVS$groupsize6[WVS$S025 == 8402006] <- 
+WVS$VF[WVS$S025 == 8402006] <- .1085334
+WVS$VP[WVS$S025 == 8402006] <- .1875524
+WVS$PVF[WVS$S025 == 8402006] <- .117665
+WVS$PVP[WVS$S025 == 8402006] <- .1592525
+
+WVS$ethnic_id[WVS$S025 == 8402006 & WVS$X051 == 840001] <- 201000 #White
+WVS$ethnic_id[WVS$S025 == 8402006 & WVS$X051 == 840002] <- 203000 #Black
+WVS$ethnic_id[WVS$S025 == 8402006 & WVS$X051 == 840004] <- 202000 #Hispanic
+
+WVS$to[WVS$S025 == 8402006] <- 2008
+
+WVS$winner[WVS$S025 == 8402006 & WVS$E179WVS== 840001] <- 1 #reps
+
+WVS$proximity[WVS$S025 == 8402006] <- 2 #2006-2004
+WVS$winning_party_share[WVS$S025 == 8402006] <- .507
+WVS$second_party_share[WVS$S025 == 8402006] <- .483 #https://www.presidency.ucsb.edu/statistics/elections/2004
+
+#United States 2011
+WVS$numparties[WVS$S025 == 8402011] <- 2
+WVS$numgroup[WVS$S025 == 8402011] <- 3
+WVS$groupsize1[WVS$S025 == 8402011] <- .7606491
+WVS$groupsize2[WVS$S025 == 8402011] <- .1291413
+WVS$groupsize3[WVS$S025 == 8402011] <- .1102096
+#WVS$groupsize4[WVS$S025 == 8402011] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8402011] <- 
+#WVS$groupsize6[WVS$S025 == 8402011] <- 
+WVS$VF[WVS$S025 == 8402011] <- .163188
+WVS$VP[WVS$S025 == 8402011] <- .2801595
+WVS$PVF[WVS$S025 == 8402011] <- .1397159
+WVS$PVP[WVS$S025 == 8402011] <- .2794318
+
+WVS$ethnic_id[WVS$S025 == 8402011 & WVS$X051 == 840001] <- 201000 #White
+WVS$ethnic_id[WVS$S025 == 8402011 & WVS$X051 == 840002] <- 203000 #Black
+WVS$ethnic_id[WVS$S025 == 8402011 & WVS$X051 == 840004] <- 202000 #Hispanic
+
+WVS$to[WVS$S025 == 8402011] <- 2014
+
+WVS$winner[WVS$S025 == 8402011 & WVS$E179WVS== 840002] <- 1 #dems
+
+WVS$proximity[WVS$S025 == 8402011] <- 1 #2012-2011
+WVS$winning_party_share[WVS$S025 == 8402011] <- .529
+WVS$second_party_share[WVS$S025 == 8402011] <- .457 #https://www.presidency.ucsb.edu/statistics/elections/2008
+
+#United States 2017
+WVS$numparties[WVS$S025 == 8402017] <- 4
+WVS$numgroup[WVS$S025 == 8402017] <- 3
+WVS$groupsize1[WVS$S025 == 8402017] <- .7220435
+WVS$groupsize2[WVS$S025 == 8402017] <- .1086082
+WVS$groupsize3[WVS$S025 == 8402017] <- .1693483
+#WVS$groupsize4[WVS$S025 == 8402011] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8402011] <- 
+#WVS$groupsize6[WVS$S025 == 8402011] <- 
+WVS$VF[WVS$S025 == 8402017] <- .131741
+WVS$VP[WVS$S025 == 8402017] <- .2204061
+WVS$PVF[WVS$S025 == 8402017] <- .1202181
+WVS$PVP[WVS$S025 == 8402017] <- .2024432
+
+WVS$ethnic_id[WVS$S025 == 8402017 & WVS$X051 == 840001] <- 201000 #White
+WVS$ethnic_id[WVS$S025 == 8402017 & WVS$X051 == 840002] <- 203000 #Black
+WVS$ethnic_id[WVS$S025 == 8402017 & WVS$X051 == 840004] <- 202000 #Hispanic
+
+WVS$to[WVS$S025 == 8402017] <- 2017
+
+WVS$winner[WVS$S025 == 8402017 & WVS$E179WVS== 840001] <- 1 #reps
+
+WVS$proximity[WVS$S025 == 8402017] <- 1 #2017-2016
+WVS$winning_party_share[WVS$S025 == 8402017] <- .482
+WVS$second_party_share[WVS$S025 == 8402017] <- .462 #https://www.presidency.ucsb.edu/statistics/elections/2016
+
+#USA Parties
+WVS$v2paid[WVS$E179WVS == 840001] <- 809 #R
+WVS$v2paid[WVS$E179WVS == 840002] <- 432 #D
+WVS$v2paid[WVS$E179WVS == 840004] <- NA #L
+WVS$v2paid[WVS$E179WVS == 840005] <- NA #RP
+WVS$v2paid[WVS$E179WVS == 840006] <- NA #Greens
+
+WVS$vparty_year[WVS$S025 == 8401995] <- 1994 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8401999] <- 1998 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8402006] <- 2006 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8402011] <- 2010 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8402017] <- 2016 #Adjust Country-Year 
+
+#Venezuela 1996
+WVS$numparties[WVS$S025 == 8621996] <- 5
+WVS$numgroup[WVS$S025 == 8621996] <- 2
+WVS$groupsize1[WVS$S025 == 8621996] <- .8636364
+WVS$groupsize2[WVS$S025 == 8621996] <- .1363636
+#WVS$groupsize3[WVS$S025 == 8621996] <- .1693483
+#WVS$groupsize4[WVS$S025 == 8621996] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8621996] <- 
+#WVS$groupsize6[WVS$S025 == 8621996] <- 
+WVS$VF[WVS$S025 == 8621996] <- .0203827
+WVS$VP[WVS$S025 == 8621996] <- .0407653
+WVS$PVF[WVS$S025 == 8621996] <- .0349703
+WVS$PVP[WVS$S025 == 8621996] <- .032398
+
+WVS$ethnic_id[WVS$S025 == 8621996 & WVS$X051 == 862001] <- 10101000 #Venezuelan
+WVS$ethnic_id[WVS$S025 == 8621996 & WVS$X051 == 862004] <- 10102000 #AfroVenezuelan
+
+WVS$to[WVS$S025 == 8621996] <- 1999
+
+WVS$winner[WVS$S025 == 8621996 & WVS$E179WVS== 862009] <- 1 #National Convergence
+WVS$winner[WVS$S025 == 8621996 & WVS$E179WVS== 862003] <- 1 #MAS
+
+
+WVS$proximity[WVS$S025 == 8621996] <- 3 #1996-1993
+WVS$winning_party_share[WVS$S025 == 8621996] <- .3046
+WVS$second_party_share[WVS$S025 == 8621996] <- .236 #https://pdba.georgetown.edu/Elecdata/Venezuela/pres93.html
+
+#Venezuela 2000
+WVS$numparties[WVS$S025 == 8622000] <- 7
+WVS$numgroup[WVS$S025 == 8622000] <- 2
+WVS$groupsize1[WVS$S025 == 8622000] <- .8671875
+WVS$groupsize2[WVS$S025 == 8622000] <- .1328125
+#WVS$groupsize3[WVS$S025 == 8621996] <- .1693483
+#WVS$groupsize4[WVS$S025 == 8621996] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8621996] <- 
+#WVS$groupsize6[WVS$S025 == 8621996] <- 
+WVS$VF[WVS$S025 == 8622000] <- .0306112
+WVS$VP[WVS$S025 == 8622000] <- .0612225
+WVS$PVF[WVS$S025 == 8622000] <- .0451355
+WVS$PVP[WVS$S025 == 8622000] <- .0539408
+
+WVS$ethnic_id[WVS$S025 == 8622000 & WVS$X051 == 862001] <- 10101000 #Venezuelan
+WVS$ethnic_id[WVS$S025 == 8622000 & WVS$X051 == 862004] <- 10102000 #AfroVenezuelan
+
+WVS$to[WVS$S025 == 8622000] <- 2017
+
+WVS$winner[WVS$S025 == 8622000 & WVS$E179WVS== 862001] <- 1 #MVR
+WVS$winner[WVS$S025 == 8622000 & WVS$E179WVS== 862003] <- 1 #MAS
+
+WVS$proximity[WVS$S025 == 8622000] <- 0 #2000-2000
+WVS$winning_party_share[WVS$S025 == 8622000] <- .5976
+WVS$second_party_share[WVS$S025 == 8622000] <- .3752 #https://web.archive.org/web/20170805234914/http://www.cne.gob.ve/web/documentos/estadisticas/e018.pdf
+
+#Venezuela 2018
+WVS$numparties[WVS$S025 == 8622021] <- 6
+WVS$numgroup[WVS$S025 == 8622021] <- 2
+WVS$groupsize1[WVS$S025 == 8622021] <- .8692579
+WVS$groupsize2[WVS$S025 == 8622021] <- .130742
+#WVS$groupsize3[WVS$S025 == 8621996] <- .1693483
+#WVS$groupsize4[WVS$S025 == 8621996] <- .1711934
+#WVS$groupsize5[WVS$S025 == 8621996] <- 
+#WVS$groupsize6[WVS$S025 == 8621996] <- 
+WVS$VF[WVS$S025 == 8622021] <- .0302863
+WVS$VP[WVS$S025 == 8622021] <- .0605727
+WVS$PVF[WVS$S025 == 8622021] <- .0443007
+WVS$PVP[WVS$S025 == 8622021] <- .0444922
+
+WVS$ethnic_id[WVS$S025 == 8622021 & WVS$X051 == 862001] <- 10101000 #Venezuelan
+WVS$ethnic_id[WVS$S025 == 8622021 & WVS$X051 == 862004] <- 10102000 #AfroVenezuelan
+
+WVS$to[WVS$S025 == 8622021] <- 2021
+
+WVS$winner[WVS$S025 == 8622021 & WVS$E179WVS== 862031] <- 1 #USPV
+
+WVS$proximity[WVS$S025 == 8622021] <- 3 #2021-2018
+WVS$winning_party_share[WVS$S025 == 8622021] <- .6785
+WVS$second_party_share[WVS$S025 == 8622021] <- .2093 #https://web.archive.org/web/20190607200303/http://www.cne.gov.ve/ResultadosElecciones2018/index.php
+
+#Venezuela Parties
+WVS$v2paid[WVS$E179WVS == 862001] <- 1754 #MVR
+WVS$v2paid[WVS$E179WVS == 862002] <- 862 #AD
+WVS$v2paid[WVS$E179WVS == 862003] <- 646 #MAS
+WVS$v2paid[WVS$E179WVS == 862004] <- 4759 #COPEI
+WVS$v2paid[WVS$E179WVS == 862005] <- 4802 #PRVZL
+WVS$v2paid[WVS$E179WVS == 862006] <- 361 #PJ
+WVS$v2paid[WVS$E179WVS == 862007] <- 4803 #LCR
+WVS$v2paid[WVS$E179WVS == 862008] <- 1356 #PPT
+WVS$v2paid[WVS$E179WVS == 862009] <- 4804 #CN
+WVS$v2paid[WVS$E179WVS == 862010] <- 849 #UNT
+WVS$v2paid[WVS$E179WVS == 862012] <- NA #ABP
+WVS$v2paid[WVS$E179WVS == 862015] <- NA #FdT
+WVS$v2paid[WVS$E179WVS == 862018] <- 1483 #PCV
+WVS$v2paid[WVS$E179WVS == 862024] <- NA #PEN
+WVS$v2paid[WVS$E179WVS == 862025] <- NA #EM
+WVS$v2paid[WVS$E179WVS == 862029] <- NA #P
+WVS$v2paid[WVS$E179WVS == 862031] <- 5094 #USP
+WVS$v2paid[WVS$E179WVS == 862032] <- 7976 #PW
+WVS$v2paid[WVS$E179WVS == 862033] <- NA #PA
+
+WVS$vparty_year[WVS$S025 == 8621996] <- 1993 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8622000] <- 1998 #Adjust Country-Year 
+WVS$vparty_year[WVS$S025 == 8622021] <- 2015 #Adjust Country-Year 
+
+#Zambia 2007
+WVS$numparties[WVS$S025 == 8942007] <- 4
+WVS$numgroup[WVS$S025 == 8942007] <- 5
+WVS$groupsize1[WVS$S025 == 8942007] <- .4513438
+WVS$groupsize2[WVS$S025 == 8942007] <- .1983318
+WVS$groupsize3[WVS$S025 == 8942007] <- .1733086
+WVS$groupsize4[WVS$S025 == 8942007] <- .1251158
+WVS$groupsize5[WVS$S025 == 8942007] <- .0518999
+#WVS$groupsize6[WVS$S025 == 8942007] <- 
+WVS$VF[WVS$S025 == 8942007] <- .2343657
+WVS$VP[WVS$S025 == 8942007] <- .2508769
+WVS$PVF[WVS$S025 == 8942007] <- .2137752
+WVS$PVP[WVS$S025 == 8942007] <- .2787651
+
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 480] <- 55101000 #Bemba
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 870] <- 55106000 #Nyanja
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 1872] <- 55107000 #Tongja-lla-lenje
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 4295] <- 55107000 #Tongja-lla-lenje
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 2550] <- 55107000 #Tongja-lla-lenje
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 2620] <- 55103000 #Lozi
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 2660] <- 55104000 #Luanda
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 2160] <- 55102000 #Kaonda
+WVS$ethnic_id[WVS$S025 == 8942007 & WVS$G016 == 2700] <- 55105000 #Luvale
+
+WVS$to[WVS$S025 == 8942007] <- 2016
+
+WVS$winner[WVS$S025 == 8942007 & WVS$E179WVS== 894001] <- 1 #MMD
+
+WVS$proximity[WVS$S025 == 8942007] <- 1 #2008-2007
+WVS$winning_party_share[WVS$S025 == 8942007] <- .4298
+WVS$second_party_share[WVS$S025 == 8942007] <- .2937 #https://www.eisa.org/wep/zam2006resultsp.htm
+
+#Zambia Parties
+WVS$v2paid[WVS$E179WVS == 894001] <- 2333 #MMD
+WVS$v2paid[WVS$E179WVS == 894002] <- 2302 #PF
+WVS$v2paid[WVS$E179WVS == 894003] <- 7187 #UDA
+WVS$v2paid[WVS$E179WVS == 894004] <- NA #HP
+WVS$v2paid[WVS$E179WVS == 894005] <- NA #APCP
+WVS$v2paid[WVS$E179WVS == 894007] <- NA #ULP
+WVS$v2paid[WVS$E179WVS == 894008] <- 2334 #UNIP
+
+WVS$vparty_year[WVS$S025 == 8942007] <- 2006 #Adjust Country-Year 
+
+
+
