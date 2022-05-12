@@ -728,32 +728,11 @@ merged_r3_data$ethnic_id[merged_r3_data$q79 == 150] <- 57108000
 #Voter Winner and Loser
 merged_r3_data$winner[merged_r3_data$q99 == 142] <- 1
 
-#Refused to and I don't know are dropped. They did not answer the question. 
-#merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
-#merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
-
-#Non Voter 
-#merged_r3_data$didnt_vote <- 0
-#merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
-
 #Loser
-#merged_r3_data$loser <- 1 
 merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 2] <- 1
 
 #Close Party Winner/Loser 
-#merged_r3_data$winner_party <- 0 
 merged_r3_data$winner_party[merged_r3_data$q86 == 142] <- 1 
-#merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
-#merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
-
-#merged_r3_data$loser_party <- 1 
-#merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
-
-#merged_r3_data$didnt_party <- 0
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
 
 #Party Matching
 merged_r3_data$v2paid[merged_r3_data$q99 == 120] <- 3831 #SOGLO  - BRP
@@ -824,32 +803,11 @@ merged_r3_data$ethnic_id[merged_r3_data$q79 == 185] <- 45206000
 #Voter Winner and Loser
 merged_r3_data$winner[merged_r3_data$q99 == 182] <- 1
 
-#Refused to and I don't know are dropped. They did not answer the question. 
-#merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
-#merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
-
-#Non Voter 
-#merged_r3_data$didnt_vote <- 0
-#merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
-
 #Loser
-#merged_r3_data$loser <- 0 
 merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 4] <- 1
 
 #Close Party Winner/Loser 
-#merged_r3_data$winner_party <- 0 
 merged_r3_data$winner_party[merged_r3_data$q86 == 182] <- 1 
-#merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
-#merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
-
-#merged_r3_data$loser_party <- 1 
-#merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
-
-#merged_r3_data$didnt_party <- 0
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
 
 #Party Matching Vote
 merged_r3_data$v2paid[merged_r3_data$q99 == 180] <- 3660 
@@ -1217,16 +1175,11 @@ merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
 merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
 merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
 
-#Non Voter 
-#merged_r3_data$didnt_vote <- 0
-#merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
-
 #Loser
 #merged_r3_data$loser <- 0
 merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 9] <- 1
 
 #Close Party Winner/Loser 
-#merged_r3_data$winner_party <- 0 
 merged_r3_data$winner_party[merged_r3_data$q86 == 293] <- 1 
 merged_r3_data$winner_party[merged_r3_data$q86 == 282] <- 1 
 merged_r3_data$winner_party[merged_r3_data$q86 == 281] <- 1 
@@ -1236,18 +1189,7 @@ merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA
 merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
 merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
 
-#merged_r3_data$loser_party <- 1 
-#merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
-
-
-#merged_r3_data$didnt_party <- 0
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
-
 #Party Matching Vote
-merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
 merged_r3_data$v2paid[merged_r3_data$q99 == 280] <- 2477 #ADEMA  
 merged_r3_data$v2paid[merged_r3_data$q99 == 281] <- 2319  #RPM
 merged_r3_data$v2paid[merged_r3_data$q99 == 282] <- 2478 #CNID
@@ -1263,7 +1205,6 @@ merged_r3_data$v2paid[merged_r3_data$q99 == 292] <- 2476 #URD
 
 #Party Matching Close
 
-merged_r3_data$v2paid_close[merged_r3_data$q86 == -1] <- NA 
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 280] <- 2477 #ADEMA  
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 281] <- 2319  #RPM
 merged_r3_data$v2paid_close[merged_r3_data$q86 == 282] <- 2478 #CNID
@@ -1289,18 +1230,6 @@ merged_r3_data$second_party_share[merged_r3_data$country==9] <- .3499 #AE Databa
 
 ##          Mozambique not included because languages are the main identifier instead of ethnic group. 
 
-#merged_r3_data$numparties[merged_r3_data$country == 10] <-     
-#merged_r3_data$numgroup[merged_r3_data$country == 10] <- 
-#merged_r3_data$groupsize1[merged_r3_data$country == 10] <-   
-#merged_r3_data$groupsize2[merged_r3_data$country == 10] <- 
-#merged_r3_data$groupsize3[merged_r3_data$country == 9] <- 
-#merged_r3_data$VF[merged_r3_data$country == 10] <- 
-#merged_r3_data$VP[merged_r3_data$country == 10] <- 
-#merged_r3_data$PVF[merged_r3_data$country == 10] <- 
-#merged_r3_data$PVP[merged_r3_data$country == 10] <- 
-
-#merged_r3_data$to[merged_r3_data$country == 10] <- 2014
-
 #Interview June 2005
 #Voter Winner and Loser 
 merged_r3_data$winner[merged_r3_data$q99 == 300] <- 1
@@ -1310,34 +1239,12 @@ merged_r3_data$winner[merged_r3_data$q99 == -1] <- NA
 merged_r3_data$winner[merged_r3_data$q99 == 998] <- NA 
 merged_r3_data$winner[merged_r3_data$q99 == 999] <- NA 
 
-#Non Voter 
-#merged_r3_data$didnt_vote <- 0
-#merged_r3_data$didnt_vote[merged_r3_data$q99 == 997] <- 1
-
 #Loser
 #merged_r3_data$loser <- 0
 merged_r3_data$loser[merged_r3_data$winner == 0 & merged_r3_data$didnt_vote == 0 & merged_r3_data$country == 10] <- 1 
 
 #Close Party Winner/Loser 
-#merged_r3_data$winner_party <- 0 
 merged_r3_data$winner_party[merged_r3_data$q86 == 300] <- 1 
-#merged_r3_data$winner_party[merged_r3_data$q86 == -1] <- NA 
-#merged_r3_data$winner_party[merged_r3_data$q86 == 997] <- NA 
-#merged_r3_data$winner_party[merged_r3_data$q86 == 998] <- NA 
-
-#merged_r3_data$loser_party <- 1 
-#merged_r3_data$loser_party[merged_r3_data$winner_party == 1] <- 0
-
-#merged_r3_data$nonpartisan <- 0
-#merged_r3_data$nonpartisan[merged_r3_data$q85 == 0] <- 1
-#merged_r3_data$nonpartisan[merged_r3_data$q85 == 8] <- NA
-#merged_r3_data$nonpartisan[merged_r3_data$q85 == 9] <- NA
-
-#merged_r3_data$didnt_party <- 0
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 0] <- 1
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 8] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == 9] <- NA
-#merged_r3_data$didnt_party[merged_r3_data$q85 == -1] <- NA
 
 #Party Matching Vote
 merged_r3_data$v2paid[merged_r3_data$q99 == -1] <- NA 
@@ -1802,6 +1709,7 @@ merged_r3_data$nonpartisan[merged_r3_data$q85 == 9] <- NA
 
 merged_r3_data$loser_party <- 0 
 merged_r3_data$loser_party[merged_r3_data$winner_party == 0 & merged_r3_data$didnt_party == 0] <- 1
+
 
 
 
@@ -2884,7 +2792,7 @@ merged_r4_data$second_party_share[merged_r4_data$COUNTRY==20] <- .0978  #AE data
 #int date: JUN-JUL/12
 
 merged_r5_data$winner <- 0
-merged_r5_data$winner[merged_r5_data$Q99 == 100] <- 1 #BDP
+merged_r5_data$winner[merged_r5_data$Q99 == 100] <- 1 #fcbe
 
 #Refused to and I don't know are dropped. They did not answer the question.
 merged_r5_data$winner[merged_r5_data$Q99 == -1] <- NA
@@ -2937,6 +2845,28 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 102] <- NA #ABT
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 103] <- NA #UPR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 104] <- 7059 #7059
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 1] <- 3   
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 1] <- 4
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 1] <- .1579618       
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 1] <- .3834395
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 1] <- .2713376
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 1] <- .1872611
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 1] <- .1058792
+merged_r5_data$VP[merged_r5_data$COUNTRY == 1] <- .1204124
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 1] <- .1001616
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 1] <- .1714251
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 1] <- 2011     
+merged_r5_data$year[merged_r5_data$COUNTRY== 1] <- 2011 #dec
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==1] <- 0 #2011-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 1] <- .5314      
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 1] <- .3564  #AE data
+
 #Botswana 2
 #int date: JUN-JUL/12
 merged_r5_data$winner[merged_r5_data$Q99 == 141] <- 1 #BDP
@@ -2961,6 +2891,30 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 142] <- NA #BMD
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 143] <- 2336 #BNF
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 144] <- 3632 #BPP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 146] <- 4832  #Umbrella
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 2] <- 7  
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 2] <- 5
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 2] <- .4860051        
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 2] <- .1933842
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 2] <- .0916031
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 2] <- .1094148
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 2] <- .1195929
+
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 2] <- .1082692
+merged_r5_data$VP[merged_r5_data$COUNTRY == 2] <- .1126736
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 2] <- .119633
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 2] <- .1175033
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 2] <- 2009      
+merged_r5_data$year[merged_r5_data$COUNTRY== 2] <- 2012 #jul
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==2] <-2 #2014-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 2] <- .5326        
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 2] <- .2194  #https://www.eisa.org/wep/bot2009presults.htm
 
 #Burkina 3
 #int date: DEC/12
@@ -3014,12 +2968,36 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 261] <- 2311  #NDC
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 262] <- 4732 #NPP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 263] <- NA #PNC
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 5] <- 3
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 5] <- 4
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 5] <- .1736282         
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 5] <- .0737101
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 5] <- .2366912
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 5] <- .5159705
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 5] <- .2523361
+merged_r5_data$VP[merged_r5_data$COUNTRY == 5] <- .2973938
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 5] <- .1580149
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 5] <- .2999591
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 5] <- 2008     
+merged_r5_data$year[merged_r5_data$COUNTRY== 5] <- 2012  #may
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==5] <- 0 #2012-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 5] <- .5023        
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 5] <- .4977  #AE data
+
 #Kenya 6 
 #int date: NOV/11
 merged_r5_data$winner[merged_r5_data$Q99 == 302] <- 1 
+merged_r5_data$winner[merged_r5_data$Q99 == 300] <- 1 
 
 #Close Party Winner/Loser 
 merged_r5_data$winner_party[merged_r5_data$Q89B == 302] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 300] <- 1 
 
 #Party Matching Vote
 merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
@@ -3054,6 +3032,32 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 308] <- 2316 #KANU
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 309] <- 7932 #NPK
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 313] <- 3858 #S
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 314] <- 4083 #KADU
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 6] <- 6  
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 6] <- 8 
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 6] <- .2691202         
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 6] <- .1322599
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 6] <- .1483611
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 6] <- .1748131
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 6] <- .1127085
+merged_r5_data$groupsize6[merged_r5_data$COUNTRY == 6] <- .0437033
+merged_r5_data$groupsize7[merged_r5_data$COUNTRY == 6] <- .0448534
+merged_r5_data$groupsize8[merged_r5_data$COUNTRY == 6] <- .0741806
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 6] <- .380542
+merged_r5_data$VP[merged_r5_data$COUNTRY == 6] <- .264171
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 6] <- .3166941
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 6] <- .4027616
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 6] <- 2007      
+merged_r5_data$year[merged_r5_data$COUNTRY== 6] <-  2011 #nov
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==6] <- 2  #2013-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 6] <- .4642        
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 6] <- .4407  #AE data
 
 #Lesotho Droppped no ethnic groups
 
@@ -3096,6 +3100,29 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 392] <- 2316 #LINU
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 395] <- 5163 #NUDP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 409] <- 4142 #NPP
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 8] <- 4   
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 8] <- 5
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 8] <- .3215548          
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 8] <- .1837456
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 8] <- .2190813
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 8] <- .1978799
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 8] <- .0777385
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 8] <- .2206726
+merged_r5_data$VP[merged_r5_data$COUNTRY == 8] <- .2007566
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 8] <- .1920124
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 8] <- .2645833
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 8] <- 2011       
+merged_r5_data$year[merged_r5_data$COUNTRY== 8] <- 2012 #jul
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==8] <- 1  #2012-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 8] <-  .9071       
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 8] <- .0929  #https://en.wikipedia.org/wiki/2011_Liberian_general_election
+
 ##            Madagascar 9
 #int date: MAR-APR/13 
 merged_r5_data$winner[merged_r5_data$Q99 == 438] <- 1 #Use the 2006 Elections because 2013 happened Oct and Dec 2013
@@ -3133,6 +3160,27 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 428] <- 5370 #FANILO
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 438] <- 5201 #TIM
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 439] <- 5869 #UNDD
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 9] <- 7   
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 9] <- 2
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 9] <- .4214876           
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 9] <- .5785124
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 9] <- .1090046
+merged_r5_data$VP[merged_r5_data$COUNTRY == 9] <- .2180092
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 9] <- .2004645
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 9] <- .2045383
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 9] <- 2007
+merged_r5_data$year[merged_r5_data$COUNTRY== 9] <- 2013 #before election
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==9] <- 0  #2013-2013
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 9] <-.5479         
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 9] <- .1165   #AE database
+
+
 ##            Malawi 10
 #Int date: Jun/12
 merged_r5_data$winner[merged_r5_data$Q99 == 462] <- 1 
@@ -3160,6 +3208,28 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 464] <- 3732 #MCP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 472] <- 4847 #PP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 475] <- 3737 #RP 
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 476] <- 3734 #UDF
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 10] <- 4  
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 10] <- 3
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 10] <- .4245014            
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 10] <- .4233618
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 10] <- .1521368
+
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 10] <- .1711832
+merged_r5_data$VP[merged_r5_data$COUNTRY == 10] <- .2523433
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 10] <- .2067242
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 10] <- .2812206
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 10] <- 2009  
+merged_r5_data$year[merged_r5_data$COUNTRY== 10] <- 2012 #jun
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==10] <-  2 #2014-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 10] <- .6617         
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 10] <-  .3049  #AE database
 
 #         Mali      11 
 
@@ -3200,6 +3270,7 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 510] <- 6084 #PARENA
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 512] <- 6448 #PSP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 514] <- 2319 #RPM
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 518] <- 2476 #URD
+
 
 #         Mozambique      12 
 
@@ -3254,13 +3325,40 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 587] <- 4895 #RDP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 590] <- 2331 #SWAPO
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 591] <- 2355 #UDF
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 13] <- 6      
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 13] <- 6
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 13] <- .5872642             
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 13] <- .1591981
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 13] <- .0955189
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 13] <- .053066
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 13] <- .0813679
+merged_r5_data$groupsize6[merged_r5_data$COUNTRY == 13] <- .0235849
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 13] <- .1566419
+merged_r5_data$VP[merged_r5_data$COUNTRY == 13] <- .1892484
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 13] <- .1625348
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 13] <- .25702
+  
+  #Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 13] <- 2009      
+merged_r5_data$year[merged_r5_data$COUNTRY== 13] <- 2012  #dec
+  
+  #Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==13] <- 2  #2014-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 13] <- .7642          
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 13] <- .1108   #https://www.ecn.na/wp-content/uploads/2019/07/27-28-Nov-2009-Presidential-Elections.pdf
+
 #         NIGERIA      14
 
 #Int date: OCT/12 - JAN/13 
 merged_r5_data$winner[merged_r5_data$Q99 == 638] <- 1 
+merged_r5_data$winner[merged_r5_data$Q99 == 624] <- 1 
+
 
 #Close Party Winner/Loser 
 merged_r5_data$winner_party[merged_r5_data$Q89B == 638] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 624] <- 1 
 
 
 #Party Matching Vote
@@ -3290,6 +3388,29 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 622] <- 4116 #AD
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 624] <- 2313 #ANPP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 628] <- 5539 #CPC
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 638] <- 2354 #PDP
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 14] <- 5       
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 14] <- 5 
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 14] <- .5337219             
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 14] <- .2398002
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 14] <- .1606994
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 14] <- .0291424
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 14] <- .0366361
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 14] <- .2748077
+merged_r5_data$VP[merged_r5_data$COUNTRY == 14] <- .3686873
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 14] <- .3439077
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 14] <- .3803187
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 14] <- 2011      
+merged_r5_data$year[merged_r5_data$COUNTRY== 14] <- 2012  #dec
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==14] <- 1 #2012-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 14] <- .5887           
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 14] <- .3197  #https://web.archive.org/web/20110501010957/http://www.inecnigeria.org/results/presidential/
 
 #         Senegal      15
 
@@ -3321,6 +3442,30 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 662] <- 2379 #AFP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 663] <- 5766 #APR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 665] <- 6462 #URD
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 671] <- 6151 #BGG
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 15] <- 5     
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 15] <- 5
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 15] <- .4155496               
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 15] <- .3016086
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 15] <- .1648794
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 15] <- .0723861
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 15] <- .0455764
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 15] <- .098555
+merged_r5_data$VP[merged_r5_data$COUNTRY == 15] <- .0991189
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 15] <- .0706706
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 15] <- .1053108
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 15] <-  2012     
+merged_r5_data$year[merged_r5_data$COUNTRY== 15] <- 2013  #feb 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==15] <- 1 #2013-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 15] <- .658            
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 15] <- .3420  #AE data
+
 
 #         South Africa    16
 
@@ -3354,6 +3499,33 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 705] <- 1038 #DA
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 708] <- 1630 #IFP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 711] <- 5731 #NNP
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 16] <- 2       
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 16] <- 10
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 16] <- .1868339               
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 16] <- .1755486
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 16] <- .1115987
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 16] <- .0902821
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 16] <- .0946708
+merged_r5_data$groupsize6[merged_r5_data$COUNTRY == 16] <- .108464
+merged_r5_data$groupsize7[merged_r5_data$COUNTRY == 16] <- .1191223
+merged_r5_data$groupsize8[merged_r5_data$COUNTRY == 16] <- .0489028
+merged_r5_data$groupsize9[merged_r5_data$COUNTRY == 16] <- .0332288
+merged_r5_data$groupsize10[merged_r5_data$COUNTRY == 16] <- .031348
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 16] <- .2639549
+merged_r5_data$VP[merged_r5_data$COUNTRY == 16] <- .1171261
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 16] <- .1285904
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 16] <- .2571808
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 16] <- 2009       
+merged_r5_data$year[merged_r5_data$COUNTRY== 16] <- 2011  #nov 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==16] <- 3 #2014-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 16] <-  .6590             
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 16] <- .1666  #http://electionresources.org/za/provinces.php?election=2009
 
 #     Tanzania 17      
 
@@ -3383,6 +3555,26 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 746] <- 6075 #UDP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 749] <- 3553 #TLP 
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 750] <- 6075 #UDP
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 17] <- 3       
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 17] <- 2
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 17] <- .3896283                 
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 17] <- .6103717
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 17] <- .0752676
+merged_r5_data$VP[merged_r5_data$COUNTRY == 17] <- .1505352
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 17] <- .1196544
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 17] <- .1853579
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 17] <- 2010       
+merged_r5_data$year[merged_r5_data$COUNTRY== 17] <- 2012 #jun 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==17] <- 2 #2012-2010
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 17] <- .6283              
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 17] <- .2705  #AE data
+
 #     Uganda 18       
 
 #Int date: DEC/11-FEB/12
@@ -3409,6 +3601,31 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 780] <- 4523 #NRM
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 781] <- 5389  #FDC
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 782] <- 4525 #DP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 784] <- 4524 #UPC
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 18] <- 4         
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 18] <- 7
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 18] <- .2501608                  
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 18] <- .2237942 
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 18] <- .1472669
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 18] <- .1266881
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 18] <- .0720257
+merged_r5_data$groupsize6[merged_r5_data$COUNTRY == 18] <- .1157556
+merged_r5_data$groupsize7[merged_r5_data$COUNTRY == 18] <- .0643087
+  
+merged_r5_data$VF[merged_r5_data$COUNTRY == 18] <- .1269581
+merged_r5_data$VP[merged_r5_data$COUNTRY == 18] <- .0878337
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 18] <- .1061748
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 18] <- .1401809
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 18] <- 2011       
+merged_r5_data$year[merged_r5_data$COUNTRY== 18] <- 2012 #feb 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==18] <- 1 #2012-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 18] <- .6838              
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 18] <- .2601  #https://www.ec.or.ug/sites/Elec_results/2011_Pres_dis.pdf
 
 #     Zambia 19       
 
@@ -3437,32 +3654,29 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 826] <- 2302 #PF
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 827] <- 2334 #UNIP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 828] <- 2335 #UPND 
 
-#     Zimbabwe 20      
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 19] <- 4        
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 19] <- 5
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 19] <- .4596491                  
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 19] <- .2280702
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 19] <- .1298246
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 19] <- .0666667
+merged_r5_data$groupsize5[merged_r5_data$COUNTRY == 19] <- .1157895
 
-#Int date: JUL/12
-merged_r5_data$winner[merged_r5_data$Q99 == 861] <- 1 
+merged_r5_data$VF[merged_r5_data$COUNTRY == 19] <- .2169719
+merged_r5_data$VP[merged_r5_data$COUNTRY == 19] <- .2444102
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 19] <- .1841773
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 19] <- .2904987
 
-#Close Party Winner/Loser 
-merged_r5_data$winner_party[merged_r5_data$Q89B == 861] <- 1 
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 19] <- 2011       
+merged_r5_data$year[merged_r5_data$COUNTRY== 19] <- 2013 #feb 
 
-#Party Matching Vote
-merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
-merged_r5_data$v2paid[merged_r5_data$Q99 == 860] <- NA #MDC-T
-merged_r5_data$v2paid[merged_r5_data$Q99 == 821] <- 2332  #FDD
-merged_r5_data$v2paid[merged_r5_data$Q99 == 822] <- NA #HP
-merged_r5_data$v2paid[merged_r5_data$Q99 == 823] <- 2333 #MMD
-merged_r5_data$v2paid[merged_r5_data$Q99 == 826] <- 2302 #PF
-merged_r5_data$v2paid[merged_r5_data$Q99 == 827] <- 2334 #UNIP
-merged_r5_data$v2paid[merged_r5_data$Q99 == 828] <- 2335 #UPND 
-merged_r5_data$v2paid[merged_r5_data$Q99 == 829] <- NA #ZED
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==19] <- 2 #2013-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 19] <- .4285               
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 19] <- .3615  #https://www.ec.or.ug/sites/Elec_results/2011_Pres_dis.pdf
 
-#Party Matching Close
-merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA 
-merged_r5_data$v2paid_close[merged_r5_data$Q89B == 821] <- 2332  #FDD
-merged_r5_data$v2paid_close[merged_r5_data$Q89B == 823] <- 2333 #MMD
-merged_r5_data$v2paid_close[merged_r5_data$Q89B == 826] <- 2302 #PF
-merged_r5_data$v2paid_close[merged_r5_data$Q89B == 827] <- 2334 #UNIP
-merged_r5_data$v2paid_close[merged_r5_data$Q89B == 828] <- 2335 #UPND 
 
 #     Zimbabwe 20      
 
@@ -3491,6 +3705,26 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 823] <- 2333 #MMD
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 826] <- 2302 #PF
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 827] <- 2334 #UNIP
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 828] <- 2335 #UPND 
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 20] <- 2      
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 20] <- 2
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 20] <- .6060606                   
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 20] <- .3939394
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 20] <- .0610235
+merged_r5_data$VP[merged_r5_data$COUNTRY == 20] <- .1220469
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 20] <- .0610235
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 20] <- .1220469
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 20] <- 2008       
+merged_r5_data$year[merged_r5_data$COUNTRY== 20] <- 2012 #jul 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==20] <- 1 #2013-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 20] <- .9022               
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 20] <-  .0978 #AE elections
 
 #     Mauritius 21      
 #Int date: JAN-FEB/12
@@ -3528,9 +3762,13 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 908] <- 2463 #OPR
 
 #Int date: JUN-JUL/12
 merged_r5_data$winner[merged_r5_data$Q99 == 930] <- 1 
+merged_r5_data$winner[merged_r5_data$Q99 == 931] <- 1 
+
 
 #Close Party Winner/Loser 
 merged_r5_data$winner_party[merged_r5_data$Q89B == 930] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 931] <- 1 
+
 
 #Party Matching Vote
 merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
@@ -3545,13 +3783,40 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == -1] <- NA
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 930] <- 4045 #APC
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 931] <- 4047  #SLPP
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 22] <-3       
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 22] <- 4
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 22] <- .0886999                    
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 22] <- .4143378
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 22] <- .3803159
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 22] <- .1166464
+
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 22] <- .4040888
+merged_r5_data$VP[merged_r5_data$COUNTRY == 22] <- .5581603
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 22] <- .3523394
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 22] <- .6532618
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 22] <- 2007         
+merged_r5_data$year[merged_r5_data$COUNTRY== 22] <- 2012 #jul 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==22] <- 0 #2012-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 22] <- .5462               
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 22] <- .4538  #AE elections
+
 #     Niger  23      
 
 #Int date: APR/13
 merged_r5_data$winner[merged_r5_data$Q99 == 1105] <- 1 
+merged_r5_data$winner[merged_r5_data$Q99 == 1103] <- 1 
+merged_r5_data$winner[merged_r5_data$Q99 == 1113] <- 1 
 
 #Close Party Winner/Loser 
 merged_r5_data$winner_party[merged_r5_data$Q89B == 1105] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 1103] <- 1 
+merged_r5_data$winner_party[merged_r5_data$Q89B == 1113] <- 1 
 
 #Party Matching Vote
 merged_r5_data$v2paid[merged_r5_data$Q99 == -1] <- NA 
@@ -3582,6 +3847,29 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1110] <- 5348 #RSD
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1113] <- 5645 #UDR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1114] <- 7301 #UNIS
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 23] <- 5        
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 23] <- 4
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 23] <- .5539359                     
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 23] <- .2983479
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 23] <- .0826045
+merged_r5_data$groupsize4[merged_r5_data$COUNTRY == 23] <- .0651118
+
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 23] <- .2069145
+merged_r5_data$VP[merged_r5_data$COUNTRY == 23] <- .3062325
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 23] <- .2551509
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 23] <- .273918
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 23] <- 2011          
+merged_r5_data$year[merged_r5_data$COUNTRY== 23] <- 2013 #apr 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==23] <- 2 #2013-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 23] <- .5804               
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 23] <- .4196  #AE elections
+
 #Togo 24
 
 #Intv date : DEC/12
@@ -3610,6 +3898,28 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1143] <- 4133 #CAR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1144] <- NA #CDPA
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1145] <- NA #PRR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1148] <- 8071 #ADDI
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 24] <- 4         
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 24] <- 2
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 24] <- .6549296                      
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 24] <- .3450704
+
+
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 24] <- .1361605
+merged_r5_data$VP[merged_r5_data$COUNTRY == 24] <- .272321
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 24] <- .1613519 
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 24] <- .2781355
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 24] <- 2007         
+merged_r5_data$year[merged_r5_data$COUNTRY== 24] <- 2012  #dec 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==24] <- 1 #2013-2012
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 24] <- .6089               
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 24] <- .3394  #AE elections
 
 #BURUNDI 25
 
@@ -3686,6 +3996,27 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1261] <- 5098  #PDCI
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1262] <- 5096 #FPI
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1263] <- 7335 #UDPCI
 
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 27] <- 4          
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 27] <- 3
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 27] <- .3881789                       
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 27] <- .2140575
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 27] <- .3977636
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 27] <- .3640377
+merged_r5_data$VP[merged_r5_data$COUNTRY == 27] <- .4999045
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 27] <- .3653539 
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 27] <- .4708088
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 27] <-  2011        
+merged_r5_data$year[merged_r5_data$COUNTRY== 27] <- 2013  #mar 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==27] <- 2 #2013-2011
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 27] <- .5410              
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 27] <- .459  #AE elections
+
 #   Guinea 28
 #Intv date : Mar-Apr/13
 merged_r5_data$winner[merged_r5_data$Q99 == 1300] <- 1 
@@ -3714,6 +4045,27 @@ merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1300] <- 4063 #RDR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1301] <- 4274  #UFDG 
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1302] <- 4275 #UFR
 merged_r5_data$v2paid_close[merged_r5_data$Q89B == 1305] <- 4276 #UPR
+
+#PE measure
+merged_r5_data$numparties[merged_r5_data$COUNTRY == 28] <-  4       
+merged_r5_data$numgroup[merged_r5_data$COUNTRY == 28] <- 3
+merged_r5_data$groupsize1[merged_r5_data$COUNTRY == 28] <- .4212454                        
+merged_r5_data$groupsize2[merged_r5_data$COUNTRY == 28] <- .3833944
+merged_r5_data$groupsize3[merged_r5_data$COUNTRY == 28] <- .1953602
+
+merged_r5_data$VF[merged_r5_data$COUNTRY == 28] <- .3848225
+merged_r5_data$VP[merged_r5_data$COUNTRY == 28] <- .562806
+merged_r5_data$PVF[merged_r5_data$COUNTRY == 28] <- .3754984 
+merged_r5_data$PVP[merged_r5_data$COUNTRY == 28] <- .5961056
+
+#Vparty Year 
+merged_r5_data$vparty_year[merged_r5_data$COUNTRY== 28] <- 2013          
+merged_r5_data$year[merged_r5_data$COUNTRY== 28] <- 2013  #mar 
+
+#Compet
+merged_r5_data$proximity[merged_r5_data$COUNTRY==28] <- 2 #2015-2013
+merged_r5_data$winning_party_share[merged_r5_data$COUNTRY== 28] <- .5252              
+merged_r5_data$second_party_share[merged_r5_data$COUNTRY== 28] <- .4748  #AE elections
 
 ## Swaziland 30 SKIPPED BECAUSE MISSING VOTING AND PARTY ITEMS
 
@@ -6093,17 +6445,6 @@ merged_r7_data$ethnic_ider[merged_r7_data$Q84 == 9997] <- NA
 merged_r7_data$ethnic_ider[merged_r7_data$Q84 == 9996] <- NA
 merged_r7_data$ethnic_ider[merged_r7_data$Q84 == 9990] <- 0
 
-#keeps <- c("trust_president","trust_parliament", "trust_army", "trust_courts", "trust_electoral",
-           "trust_police", "Year", "loser_party", "income", "country", 
-           "female", "employment", "age", "years_since_election",
-           "education","country_wave", "wave", "country.name", "nonpartisan", "cowcode")
-
-#Round_2 = merged_r2_data[keeps]
-#Round_3 = merged_r3_data[keeps]
-#Round_4 = merged_r4_data[keeps]
-#Round_5 = merged_r5_data[keeps]
-#Round_6 = merged_r6_data[keeps]
-#Round_7 = merged_r6_data[keeps]
 
 
 
